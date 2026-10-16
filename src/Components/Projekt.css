@@ -1,0 +1,60 @@
+.projekt {
+  padding: 64px 32px;
+  background-color: #ede9f6;
+}
+
+.projekt h2 {
+  font-size: 32px;
+  margin: 0 0 32px;
+}
+
+.projekt-lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;   /* tre kort bredvid varandra */
+  gap: 24px;
+
+
+}
+
+/* På mobil hamnar korten under varandra */
+@media (max-width: 800px) {
+  .projekt-lista {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .projekt {
+    padding: 40px 20px;
+  }
+}
+ --
+
+.Projekt
+{
+padding: 64px 32px;
+background-color: #f9f9f9;  
+
+.Projekt h2 {
+  font-size: 32px;
+  margin-bottom: 0 0 32px;
+}
+
+.Projekt-Lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;       /* tre kort bredvid varandra */
+  gap: 24px;
+}
+
+/*På mobil hamnar korten under varandra*/   
+@media (max-width: 800px) {
+  .Projekt-Lista {
+    grid-template-columns: 1fr;             /* ett kort per rad */
+  }
+}
+
+@media (max-width: 600px) {
+  .Projekt {padding: 40px 20px;}
+    grid-template-columns: 1fr 1fr;         /* två kort per rad */
+  }
+}

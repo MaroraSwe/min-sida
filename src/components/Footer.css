@@ -1,0 +1,46 @@
+.footer {
+  margin-top: auto;                 /* footern hamnar längst ner även på korta sidor */
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 24px 20px;
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+.footer-kontakt {
+  margin: 12px 0;
+}
+
+.footer-kontakt h2 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: var(--canvas);             /* ljus rubrik på den mörka footern */
+}
+
+.footer-kontakt p {
+  margin: 0;
+}
+
+.footer-kontakt a {
+  color: var(--canvas);
+}
+
+.footer-kontakt a:hover {
+  color: var(--cta);
+}
+
+.footer-bottom {
+  margin-top: 12px;
+  opacity: 0.8;                     /* lite dämpad, så kontaktraden syns mest */
+}
+
+.footer-länk {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: var(--cta);
+  color: var(--plum);
+  text-decoration: none;
+}

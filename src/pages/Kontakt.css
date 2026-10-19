@@ -1,0 +1,98 @@
+.kontakt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* två lika breda kolumner */
+  gap: 48px;
+  align-items: start;
+  padding: 40px 32px 48px;          /* samma som Hem och Om mig */
+  text-align: left;
+}
+
+.kontakt-info h2 {
+  margin: 0 0 16px;                 /* samma rubrikstil som Hem och Om mig */
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.kontakt-info p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.kontakt-lankar {
+  margin-top: 16px;
+}
+
+.kontakt-info a {
+  color: var(--plum);
+  font-weight: 600;
+}
+
+.kontakt-info a:hover {
+  text-decoration-color: var(--cta);  /* understrykningen blir korall */
+  text-decoration-thickness: 2px;
+}
+
+.kontakt-form {
+  display: flex;
+  flex-direction: column;           /* fälten under varandra */
+  gap: 8px;
+}
+
+.kontakt-form label {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.kontakt-form input,
+.kontakt-form textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: var(--plum);
+  font: inherit;                    /* samma typsnitt som resten av sidan */
+}
+
+.kontakt-form textarea {
+  resize: vertical;                 /* går bara att dra högre, inte bredare */
+}
+
+.kontakt-form input:focus,
+.kontakt-form textarea:focus {
+  outline: 2px solid var(--plum);   /* tydlig ram runt fältet man skriver i */
+  outline-offset: 1px;
+}
+
+.kontakt-form button {
+  align-self: flex-start;           /* knappen blir inte lika bred som formuläret */
+  margin-top: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--cta);
+  color: var(--plum);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;                  /* handen visas när man håller över knappen */
+}
+
+.kontakt-form button:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+/* På mobil hamnar formuläret under texten */
+@media (max-width: 800px) {
+  .kontakt {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .kontakt {
+    padding: 40px 20px 48px;
+  }
+}

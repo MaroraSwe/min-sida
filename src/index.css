@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 :root {
-  --text: #4E5059;
-  --text-h: #1C2027;
-  --bg: ##FFFAF5;
-  --border: #E7DFD9;
+  /* ===== Färgtema – ändra här så ändras hela sidan ===== */
+  --canvas: #F5F3F8;           /* Light Lavender-White – bakgrund */
+  --secondary: #9D8BAA;        /* Dusty Lavender – färgade ytor */
+  --secondary-light: #DBD4E1;  /* ljusare Dusty Lavender – sektioner, etiketter */
+  --plum: #3B1E2B;             /* Deep Burgundy Plum – text, rubriker, meny */
+  --cta: #D9777F;              /* Rose Gold / Warm Coral – knappar */
+
+  --text: var(--plum);
+  --text-h: var(--plum);
+  --bg: var(--canvas);
+  --border: var(--secondary-light);
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
@@ -61,6 +68,7 @@ h2 {
 
 h1 {
   font-size: 56px;
+  line-height: 1.1;               /* raderna överlappar inte när rubriken bryts */
   letter-spacing: -1.68px;
   margin: 32px 0;
   @media (max-width: 1024px) {

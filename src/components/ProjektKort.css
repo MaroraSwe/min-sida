@@ -1,0 +1,56 @@
+.projekt-kort {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;                      /* bilden får runda hörn upptill */
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(59, 30, 43, 0.12);
+  display: flex;
+  flex-direction: column;                /* bild och info under varandra */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projekt-bild {
+  width: 100%;
+  height: 160px;
+  display: block;
+  object-fit: cover;                     /* bilden fyller rutan utan att bli utdragen */
+}
+
+.projekt-info {
+  padding: 20px;
+  flex: 1;                               /* info-delen fyller resten av kortet */
+  display: flex;
+  flex-direction: column;
+}
+
+.projekt-info h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: var(--plum);
+}
+
+.projekt-info p {
+  margin-bottom: 16px;                   /* luft mellan texten och knappen */
+}
+
+.projekt-knapp {
+  display: inline-block;
+  margin-top: auto;                      /* skjuter knappen längst ner */
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--cta);
+  color: var(--plum);
+  font-weight: 600;
+  text-decoration: none;                 /* tar bort understrykningen */
+  align-self: center;                    /* knappen hamnar i mitten av kortet */
+}
+
+.projekt-knapp:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+.projekt-knapp:focus-visible {
+  outline: 3px solid var(--plum);
+  outline-offset: 4px;
+}

@@ -1,12 +1,12 @@
 .header {
   text-align: center;
-  padding: 80px 20px;
-  background-color: #bbd3e4;
+  padding: 20px 10px;
+  background-color: var(--canvas);
 }
 
 .header h1 {
-  font-size: 48px;
-  margin: 20px 0;
+  font-size: 44px;
+  margin: 10px 0;
 }
 
 .header p {

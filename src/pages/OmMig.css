@@ -1,0 +1,78 @@
+.om-mig {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* text till vänster, bild till höger */
+  align-items: center;              /* texten hamnar mitt för bilden */
+  gap: 32px;                        /* samma som på startsidan */
+  padding: 40px 32px 48px;          /* samma som på startsidan */
+  text-align: left;
+  background-color: var(--canvas);
+}
+
+.om-mig-bild {
+  order: 2;                         /* flyttar bilden till högra kolumnen */
+  display: block;
+  justify-self: end;                /* bilden ligger mot högerkanten, som på startsidan */
+  width: 300px;                     /* samma storlek som bilden på startsidan */
+  height: 400px;
+  max-width: 100%;                  /* krymper på mobil i stället för att sticka ut */
+  object-fit: cover;                /* bilden blir inte utdragen när den krymper */
+  border-radius: 8px;
+}
+
+.om-mig h2 {
+  margin: 0 0 16px;                 /* samma rubrikstil som på startsidan */
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.om-mig-text {
+  max-width: 55ch;                  /* lagom lång rad, lätt att läsa */
+  margin: 0 0 24px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.om-mig h3 {
+  margin: 0 0 16px;
+  color: var(--plum);
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+.om-mig-lista {
+  display: flex;                    /* lägger etiketterna på en rad */
+  flex-wrap: wrap;                  /* på mobil hamnar de på flera rader */
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;                 /* tar bort pricken framför */
+}
+
+.om-mig-lista li {
+  padding: 8px 20px;
+  border-radius: 999px;             /* helt runda kanter */
+  background-color: var(--secondary-light);
+  color: var(--plum);
+  font-weight: 600;
+}
+
+/* På mobil hamnar texten under bilden */
+@media (max-width: 800px) {
+  .om-mig {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .om-mig-bild {
+    order: 0;                       /* på mobil ligger bilden kvar överst */
+    justify-self: start;            /* i linje med texten */
+  }
+}
+
+@media (max-width: 600px) {
+  .om-mig {
+    padding: 40px 20px 48px;
+  }
+}

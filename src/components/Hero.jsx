@@ -1,5 +1,5 @@
 import "./Hero.css";
-import herobild from "../Assets/Hero2.jpg";
+import herobild from "../assets/Self.jpg";
 
 function Hero({ namn }) {
     return (
@@ -12,13 +12,15 @@ function Hero({ namn }) {
                     Läs vidare
                 </a>
             </div>
+            
+            <div id="wrapper">
             <img
                 className="hero-bild"
                 src={herobild}
                 alt="Hero Bild"
-                width="2880"
-                height="1800"
             />
+
+            </div>
         </section>
     );
 }

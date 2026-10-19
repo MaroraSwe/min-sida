@@ -1,0 +1,48 @@
+.navbar {
+  display: flex;                    /* lägger logo och länkar på en rad */
+  justify-content: flex-end;        /* länkarna längst till höger */
+  align-items: center;
+  padding: 16px 32px;
+  background-color: var(--plum);
+}
+
+.logo {
+  margin: 0;                        /* tar bort h1:ans stora marginal */
+  letter-spacing: normal;
+  color: var(--canvas);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lankar {
+  display: flex;
+  gap: 24px;                        /* avstånd mellan länkarna */
+}
+
+.lankar a {
+  color: var(--canvas);
+  text-decoration: none;            /* tar bort understrykningen */
+}
+
+.lankar a:hover {
+  color: var(--cta);
+  text-decoration: underline;
+}
+
+/* På mobil får länkarna hamna under loggan */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 12px 20px;
+  }
+
+  .lankar {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+
+  .lankar a {
+    white-space: nowrap;            /* "Om Mig" delas inte på två rader */
+  }
+}

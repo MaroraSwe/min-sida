@@ -1,17 +1,17 @@
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ lankar }) {
   return (
     <nav className="navbar">
       <div className="lankar">
-        <Link to="/">Hem</Link>
-        <Link to="/om-mig">Om Mig</Link>
-        <a href="/#projekt">Projekt</a>
-        <Link to="/kontakt">Kontakt</Link>
-        
-        
-       
+        {lankar.map((lank) =>
+  lank.till.includes("#") ? (
+    <a key={lank.namn} href={lank.till}>{lank.namn}</a>
+  ) : (
+    <Link key={lank.namn} to={lank.till}>{lank.namn}</Link>
+  )
+)}   
       </div>
     </nav>
   );

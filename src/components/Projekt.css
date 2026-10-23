@@ -1,5 +1,5 @@
 .projekt {
-  padding: 64px 32px;
+  padding: 64px 32px 40px;          /* mindre luft under korten */
   background-color: var(--secondary-light);
 }
 
@@ -10,18 +10,12 @@
 
 .projekt-lista {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;   /* tre kort bredvid varandra */
+ grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 24px;
 
 
 }
 
-/* På mobil hamnar korten under varandra */
-@media (max-width: 800px) {
-  .projekt-lista {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (max-width: 600px) {
   .projekt {

@@ -1,0 +1,66 @@
+.Raknare {
+  display: flex;
+  flex-wrap: wrap;                  /* allt på en rad, texten hamnar under */
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 12px auto;                /* lite luft ovanför och under */
+  font-size: 12px;
+}
+
+.raknare-rad {
+  display: flex;                    /* knapparna på en rad */
+  align-items: center;
+  gap: 6px;
+}
+
+/* Små runda – och + knappar */
+.raknare-rund {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;               /* helt runda */
+  background-color: var(--cta);
+  color: var(--plum);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.raknare-rund:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+.raknare-siffra {
+  min-width: 2ch;                   /* raden hoppar inte när siffran blir tvåsiffrig */
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Små knappar: Nollställ och Visa mer */
+.raknare-knapp {
+  padding: 2px 8px;
+  border: 1px solid var(--secondary);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--plum);
+  font: inherit;
+  cursor: pointer;
+}
+
+.raknare-knapp:hover {
+  border-color: var(--plum);
+  background-color: var(--secondary-light);
+}
+
+.raknare-text {
+  flex-basis: 100%;                 /* den dolda texten får en egen rad */
+  margin: 0;
+  text-align: center;
+  color: var(--plum);
+}

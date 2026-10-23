@@ -34,6 +34,14 @@
   text-decoration-thickness: 2px;
 }
 
+.kontakt-bild {
+  display: block;
+  width: 100%;
+  max-width: 360px;                 /* lagom stor bredvid formuläret */
+  height: auto;
+  margin: 32px auto 0;              /* centrerad i vänstra kolumnen */
+}
+
 .kontakt-form {
   display: flex;
   flex-direction: column;           /* fälten under varandra */
@@ -89,10 +97,29 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  .kontakt-bild {
+    max-width: 240px;               /* mindre på mobil */
+    margin-top: 16px;
+  }
 }
 
 @media (max-width: 600px) {
   .kontakt {
     padding: 40px 20px 48px;
   }
+}
+
+/* Felmeddelandet – rött */
+.kontakt-fel {
+  margin: 4px 0 0;
+  color: #b3261e;            /* mörkröd, lätt att läsa */
+  font-weight: 600;
+}
+
+/* Tackmeddelandet – grönt */
+.kontakt-tack {
+   margin: 12px 0 0;
+  color: #2e7d32;            /* mörkgrön, lätt att läsa */
+  font-weight: 600;
 }

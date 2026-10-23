@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="62 48 312 236" role="img" aria-hidden="true">
+  <!-- mjuk bakgrundsform -->
+  <path d="M70 170 C60 100 130 55 205 60 C285 65 350 105 345 175 C340 245 270 280 195 275 C120 270 80 235 70 170 Z" fill="#DBD4E1"/>
+  <!-- streckad bana efter pappersflygplanet -->
+  <path d="M95 92 C150 40 230 120 300 88" fill="none" stroke="#9D8BAA" stroke-width="3" stroke-dasharray="7 9" stroke-linecap="round"/>
+  <!-- kuvertets baksida -->
+  <rect x="110" y="140" width="180" height="120" rx="10" fill="#9D8BAA"/>
+  <!-- brevet -->
+  <rect x="132" y="104" width="136" height="118" rx="6" fill="#FFFFFF" stroke="#3B1E2B" stroke-width="3"/>
+  <path d="M154 154 h92 M154 170 h92 M154 186 h60" stroke="#9D8BAA" stroke-width="4" stroke-linecap="round"/>
+  <path d="M168 126 c-6-8-18-2-12 8 l12 10 l12-10 c6-10-6-16-12-8 z" fill="#D9777F"/>
+  <!-- kuvertets framsida -->
+  <path d="M110 160 L200 214 L290 160 L290 250 Q290 260 280 260 L120 260 Q110 260 110 250 Z" fill="#F5F3F8" stroke="#3B1E2B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M116 255 L176 200 M284 255 L224 200" stroke="#3B1E2B" stroke-width="3" stroke-linecap="round"/>
+  <!-- pappersflygplan -->
+  <path d="M296 92 L366 58 L330 118 Z" fill="#D9777F" stroke="#3B1E2B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M366 58 L320 104 L330 118" fill="none" stroke="#3B1E2B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- små detaljer -->
+  <circle cx="92" cy="210" r="6" fill="#D9777F"/>
+  <circle cx="330" cy="228" r="5" fill="#9D8BAA"/>
+  <circle cx="352" cy="200" r="3" fill="#D9777F"/>
+  <circle cx="120" cy="120" r="4" fill="#3B1E2B" opacity="0.5"/>
+</svg>

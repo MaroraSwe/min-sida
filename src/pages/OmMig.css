@@ -59,10 +59,71 @@
 }
 
 /* På mobil hamnar texten under bilden */
+/* Mina styrkor och kursen: en egen rad under text och bild */
+.om-mig-styrkor {
+  grid-column: 1 / -1;              /* går över båda kolumnerna */
+  order: 3;                         /* hamnar alltid sist, efter text och bild */
+  padding-top: 32px;
+  border-top: 1px solid var(--secondary-light);   /* tunn linje ovanför */
+}
+
+.om-mig-styrkor h3 {
+  padding-top: 0;
+  margin: 0 0 20px;
+}
+
+/* Egenskaper och Kompetenser bredvid varandra */
+.styrkor-grupper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 40px;              /* luft innan kursrubriken */
+}
+
+/* Lite mindre etiketter med jämnt avstånd */
+.om-mig-styrkor .om-mig-lista {
+  gap: 14px 10px;                   /* 14px mellan raderna, 10px mellan etiketterna */
+}
+
+.om-mig-styrkor .om-mig-lista li {
+  padding: 6px 16px;
+  font-size: 15px;
+}
+
+/* Mina styrkor – svävande etiketter */
+.styrkor-rubrik {
+  margin: 0 0 12px;
+  font-size: 13px;
+  text-transform: uppercase;        /* små versaler som en underrubrik */
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+.styrkor li {
+  animation: flyt 4s ease-in-out infinite;   /* guppar lugnt upp och ner, om och om igen */
+}
+
+@keyframes flyt {
+  0%, 100% { transform: translateY(0); }     /* start och slut: vanlig plats */
+  50%      { transform: translateY(-3px); }  /* halvvägs: 3px högre upp */
+}
+
+/* Besökare som har valt "minska rörelse" får stilla etiketter */
+@media (prefers-reduced-motion: reduce) {
+  .styrkor li {
+    animation: none;
+  }
+}
+
 @media (max-width: 800px) {
   .om-mig {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .styrkor-grupper {
+    grid-template-columns: 1fr;     /* på mobil: grupperna under varandra */
+    gap: 24px;
   }
 
   .om-mig-bild {
@@ -75,4 +136,20 @@
   .om-mig {
     padding: 40px 20px 48px;
   }
+}
+.om-mig-knapp {
+  margin-bottom: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--cta);
+  color: var(--plum);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.om-mig-knapp:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
 }

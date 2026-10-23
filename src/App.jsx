@@ -9,7 +9,14 @@ import Kontakt from "./pages/kontakt";
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar
+        lankar={[
+          { namn: "Hem", till: "/" },
+          { namn: "Om Mig", till: "/om-mig" },
+          { namn: "Projekt", till: "/#projekt" },
+          { namn: "Kontakt", till: "/kontakt" },
+        ]}
+      />
 
       <Routes>
         <Route path="/" element={<Hem />} />

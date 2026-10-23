@@ -1,6 +1,7 @@
 .projekt-kort {
   background-color: #ffffff;
   border-radius: 8px;
+   border: 1px solid var(--secondary-light);   /* tunn ram runt kortet */
   overflow: hidden;                      /* bilden får runda hörn upptill */
   text-align: left;
   box-shadow: 0 2px 8px rgba(59, 30, 43, 0.12);
@@ -33,6 +34,19 @@
   margin-bottom: 16px;                   /* luft mellan texten och knappen */
 }
 
+/* Teknik-etiketten, t.ex. "React" */
+.projekt-info .projekt-teknik {
+  align-self: flex-start;           /* etiketten blir bara så bred som texten */
+  margin: 0 0 16px;
+  padding: 1px 8px;
+  border-radius: 999px;             /* helt runda kanter */
+  background-color: var(--secondary-light);
+  color: var(--plum);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;                 /* lägre etikett */
+}
+
 .projekt-knapp {
   display: inline-block;
   margin-top: auto;                      /* skjuter knappen längst ner */
@@ -53,4 +67,9 @@
 .projekt-knapp:focus-visible {
   outline: 3px solid var(--plum);
   outline-offset: 4px;
+}
+
+.projekt-kort:hover {
+  transform: translateY(-8px);                    /* kortet lyfts 4px uppåt */
+  box-shadow: 0 8px 16px rgba(59, 30, 43, 0.18);  /* skuggan blir större */
 }

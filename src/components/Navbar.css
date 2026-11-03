@@ -4,6 +4,9 @@
   align-items: center;
   padding: 16px 32px;
   background-color: var(--plum);
+  position: sticky;                 /* navbaren följer med när man scrollar */
+  top: 0;                            /* navbaren fastnar längst upp */
+  z-index: 10;                      /* navbaren ligger ovanför allt annat */
 }
 
 .logo {

@@ -1,6 +1,7 @@
 .projekt {
   padding: 64px 32px 40px;          /* mindre luft under korten */
   background-color: var(--secondary-light);
+  scroll-margin-top: 60px;          /* scrollar ner lite när man klickar på länk */
 }
 
 .projekt h2 {

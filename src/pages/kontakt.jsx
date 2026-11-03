@@ -3,16 +3,17 @@ import kontaktBild from "../assets/kontakt.svg";
 import { useState } from "react";
 
 export default function Kontakt() {
-const [name, setName] = useState( "" );
- const [email, setEmail] = useState( "" );
- const [message, setMessage] = useState( "" );
- const [skickat, setSkickat] = useState(false);
- const [fel, setFel] = useState("");
- 
- 
- function  handleSubmit (e) {
-  e.preventDefault();       // stop page reload
-  // Check 1: no field may be empty
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [skickat, setSkickat] = useState(false);
+  const [fel, setFel] = useState("");
+  const [skickar, setSkickar] = useState(false); // NYTT: true medan det skickas
+
+  async function handleSubmit(e) {
+    e.preventDefault(); // stop page reload
+
+    // Check 1: no field may be empty
     if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
       setFel("Fyll i alla fält innan du skickar.");
       setSkickat(false);
@@ -26,15 +27,34 @@ const [name, setName] = useState( "" );
       return;
     }
 
-    // Everything OK
+    // Everything OK – send to Formspree
     setFel(""); // remove any old error message
-    console.log(name, email, message);
-    setSkickat(true); // show thank you message
-    setEmail(""); // clear the fields
-    setMessage("");
-  }
+    setSkickar(true); // knappen visar "Skickar..."
 
-  console.log(name, email, message);
+    try {
+      const svar = await fetch("https://formspree.io/f/mnppoeya", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ namn: name, email: email, meddelande: message }),
+      });
+
+      if (svar.ok) {
+        setSkickat(true); // show thank you message
+        setEmail(""); // clear the fields
+        setMessage("");
+      } else {
+        setFel("Något gick fel. Försök igen om en stund.");
+      }
+    } catch {
+      // hit kommer vi om internet är nere
+      setFel("Kunde inte skicka. Kolla din internetanslutning.");
+    } finally {
+      setSkickar(false); // körs alltid, oavsett hur det gick
+    }
+  }
 
   return (
     <section className="kontakt">
@@ -75,7 +95,9 @@ const [name, setName] = useState( "" );
 
         {fel && <p className="kontakt-fel">{fel}</p>}
 
-        <button type="submit">Skicka</button>
+        <button type="submit" disabled={skickar}>
+          {skickar ? "Skickar..." : "Skicka"}
+        </button>
 
         {skickat && <p className="kontakt-tack">Tack {name}, jag hör av mig!</p>}
       </form>

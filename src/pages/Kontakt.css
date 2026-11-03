@@ -122,4 +122,10 @@
    margin: 12px 0 0;
   color: #2e7d32;            /* mörkgrön, lätt att läsa */
   font-weight: 600;
+
+   }
+
+.kontakt-form button:disabled {
+     opacity: 0.6;
+     cursor: wait;
 }

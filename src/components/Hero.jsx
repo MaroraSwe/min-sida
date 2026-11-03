@@ -1,5 +1,7 @@
 import "./Hero.css";
 import herobild from "../assets/Self.jpg";
+import { Link } from "react-router-dom";
+
 
 function Hero({ namn }) {
     return (
@@ -8,9 +10,9 @@ function Hero({ namn }) {
                 <p className="hero-intro">Hej, jag heter {namn}!</p>
                 <h2 id="hero-title">Jag lär mig att bygga webben.</h2>
                 <p className="hero-text">Välkommen till min portfolio</p>
-                <a className="hero-knapp" href="#valkommen">
-                    Läs vidare
-                </a>
+                <Link className="hero-knapp" to="/om-mig">
+                 Läs Vidare
+                </Link>
             </div>
             
             <div id="wrapper">

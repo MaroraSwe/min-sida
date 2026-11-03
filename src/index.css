@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 :root {
   /* ===== Färgtema – ändra här så ändras hela sidan ===== */
-  --canvas: #F5F3F8;           /* Light Lavender-White – bakgrund */
-  --secondary: #9D8BAA;        /* Dusty Lavender – färgade ytor */
-  --secondary-light: #DBD4E1;  /* ljusare Dusty Lavender – sektioner, etiketter */
-  --plum: #3B1E2B;             /* Deep Burgundy Plum – text, rubriker, meny */
-  --cta: #D9777F;              /* Rose Gold / Warm Coral – knappar */
+  --canvas: #FAF7F8;           /* Ljus rosavit – bakgrund */
+  --secondary: #C9AFBF;        /* Dämpad rosa-mauve – färgade ytor */
+  --secondary-light: #EEE3E9;  /* ljusare rosa-mauve – sektioner, etiketter */
+  --plum: #2E1A26;             /* Djup plommon – text, rubriker, meny */
+  --cta: #E08E98;              /* Rosé – knappar */
 
   --text: var(--plum);
   --text-h: var(--plum);

@@ -1,15 +1,15 @@
+/* Mobil först: en kolumn, bilden under texten */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* text till vänster, bild till höger */
+  grid-template-columns: 1fr;       /* mobil: bild under text */
   align-items: center;
   text-align: left;
   gap: 32px;
-  padding: 40px 32px 48px;
+  padding: 40px 20px 48px;          /* mobil: mindre luft på sidorna */
   background-color: var(--secondary);
 }
 
-
-.hero-innehall {  
+.hero-innehall {
   display: block;
   width: 100%;
   height: auto;
@@ -28,7 +28,7 @@
   max-width: 20ch;
   margin: 0 0 16px;
   color: var(--plum);
-  font-size: 26px;
+  font-size: clamp(1.5rem, 4vw, 2rem);          /* rubrik som växer med skärmen */
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -39,7 +39,7 @@
   margin: 0 0 32px;
   font-size: 18px;
   line-height: 1.7;
-}   
+}
 
 .hero-knapp {
   display: inline-block;
@@ -51,7 +51,6 @@
   text-decoration: none;
 }
 
-
 .hero-knapp:hover {
   background-color: var(--plum);
   color: var(--canvas);
@@ -61,26 +60,9 @@
   outline: 2px solid var(--plum);
   outline-offset: 4px;
 }
-  
+
 #wrapper {
-  justify-self: end;                /* skjuter bilden och bildtexten till högerkanten */
-}
-
-@media (max-width: 800px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  #wrapper {
-    justify-self: start;            /* på mobil ligger bilden i linje med texten */
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    padding: 40px 20px 48px;
-  }
+  justify-self: start;              /* mobil: bilden i linje med texten */
 }
 
 .hero-bild {
@@ -92,3 +74,14 @@
   border-radius: 8px;
 }
 
+/* Större skärm: text till vänster, bild till höger */
+@media (min-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 32px 48px;
+  }
+
+  #wrapper {
+    justify-self: end;              /* bilden mot högerkanten */
+  }
+}

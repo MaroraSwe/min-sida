@@ -1,17 +1,17 @@
 .om-mig {
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* text till vänster, bild till höger */
+  grid-template-columns: 1fr;   /* text till vänster, bild till höger */
   align-items: center;              /* texten hamnar mitt för bilden */
   gap: 32px;                        /* samma som på startsidan */
-  padding: 40px 32px 48px;          /* samma som på startsidan */
+  padding: 40px 20px 48px;          /* samma som på startsidan */
   text-align: left;
   background-color: var(--canvas);
 }
 
 .om-mig-bild {
-  order: 2;                         /* flyttar bilden till högra kolumnen */
+  order: 0;                         /* flyttar bilden till högra kolumnen */
   display: block;
-  justify-self: end;                /* bilden ligger mot högerkanten, som på startsidan */
+  justify-self: start;                /* bilden ligger mot högerkanten, som på startsidan */
   width: 300px;                     /* samma storlek som bilden på startsidan */
   height: 400px;
   max-width: 100%;                  /* krymper på mobil i stället för att sticka ut */
@@ -75,9 +75,26 @@
 /* Egenskaper och Kompetenser bredvid varandra */
 .styrkor-grupper {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   margin-bottom: 40px;              /* luft innan kursrubriken */
+}
+
+.om-mig-knapp {
+  margin-bottom: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--cta);
+  color: var(--plum);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.om-mig-knapp:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
 }
 
 /* Lite mindre etiketter med jämnt avstånd */
@@ -115,41 +132,20 @@
   }
 }
 
-@media (max-width: 800px) {
-  .om-mig {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
 
-  .styrkor-grupper {
-    grid-template-columns: 1fr;     /* på mobil: grupperna under varandra */
-    gap: 24px;
+@media (min-width: 800px) {
+  .om-mig {
+    grid-template-columns: 1fr 1fr;
+   padding: 40px 32px 48px;
   }
 
   .om-mig-bild {
-    order: 0;                       /* på mobil ligger bilden kvar överst */
-    justify-self: start;            /* i linje med texten */
+   order: 2;
+    justify-self: end;
   }
-}
 
-@media (max-width: 600px) {
-  .om-mig {
-    padding: 40px 20px 48px;
+  .styrkor-grupper {
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
   }
-}
-.om-mig-knapp {
-  margin-bottom: 16px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--cta);
-  color: var(--plum);
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.om-mig-knapp:hover {
-  background-color: var(--plum);
-  color: var(--canvas);
 }

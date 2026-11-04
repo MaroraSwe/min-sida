@@ -1,9 +1,9 @@
 .kontakt {
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* två lika breda kolumner */
-  gap: 48px;
+  grid-template-columns: 1fr;   /* mobil: en kolumn */
+  gap: 32px;
   align-items: start;
-  padding: 40px 32px 48px;          /* samma som Hem och Om mig */
+  padding: 40px 20px 48px;          /* mindre luft på sidorna */
   text-align: left;
 }
 
@@ -37,9 +37,9 @@
 .kontakt-bild {
   display: block;
   width: 100%;
-  max-width: 360px;                 /* lagom stor bredvid formuläret */
+  max-width: 240px;                 /* mobil: mindre bild */
   height: auto;
-  margin: 32px auto 0;              /* centrerad i vänstra kolumnen */
+  margin: 16px auto 0;              /* centrerad i vänstra kolumnen */
 }
 
 .kontakt-form {
@@ -91,24 +91,6 @@
   color: var(--canvas);
 }
 
-/* På mobil hamnar formuläret under texten */
-@media (max-width: 800px) {
-  .kontakt {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .kontakt-bild {
-    max-width: 240px;               /* mindre på mobil */
-    margin-top: 16px;
-  }
-}
-
-@media (max-width: 600px) {
-  .kontakt {
-    padding: 40px 20px 48px;
-  }
-}
 
 /* Felmeddelandet – rött */
 .kontakt-fel {
@@ -128,4 +110,17 @@
 .kontakt-form button:disabled {
      opacity: 0.6;
      cursor: wait;
+}
+
+@media (min-width: 800px) {
+  .kontakt {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 40px 32px 48px;
+  }
+
+  .kontakt-bild {
+    max-width: 360px;
+    margin-top: 32px;
+  }
 }

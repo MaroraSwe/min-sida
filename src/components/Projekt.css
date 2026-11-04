@@ -1,8 +1,8 @@
 .projekt {
-  padding: 64px 32px 40px;          /* mindre luft under korten */
-  background-color: var(--secondary-light);
-  scroll-margin-top: 60px;          /* scrollar ner lite när man klickar på länk */
-}
+   padding: 40px 20px;               /* mobil först */
+   background-color: var(--secondary-light);
+   scroll-margin-top: 60px;
+ }
 
 .projekt h2 {
   font-size: 32px;
@@ -11,15 +11,15 @@
 
 .projekt-lista {
   display: grid;
- grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
 
 
 }
 
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .projekt {
-    padding: 40px 20px;
+    padding: 64px 32px 40px;
   }
 }

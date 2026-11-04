@@ -50,8 +50,8 @@
 .projekt-knapp {
   display: inline-block;
   margin-top: auto;                      /* skjuter knappen längst ner */
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 12px 24px;                /* samma storlek som hero-knappen */
+  border-radius: 6px;                /* samma storlek som hero-knappen */
   background-color: var(--cta);
   color: var(--plum);
   font-weight: 600;

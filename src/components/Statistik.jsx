@@ -30,7 +30,7 @@ function Statistik() {
                 <span style={{ width: `${procent}%` }}></span>
               </span>
               <span className="statistik-antal">
-                {st} av {projektLista.length}
+                {procent} % ({st} av {projektLista.length})
               </span>
             </li>
           );

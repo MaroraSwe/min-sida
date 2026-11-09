@@ -1,4 +1,5 @@
 .projekt-kort {
+  position: relative;                    /* React-etiketten placeras i förhållande till kortet */
   background-color: #ffffff;
   border-radius: 8px;
    border: 1px solid var(--secondary-light);   /* tunn ram runt kortet */
@@ -79,21 +80,34 @@
   margin-top: 0;
 }
 
-.projekt-las-mer {
-  display: inline-block;
-  padding: 12px 4px;                     /* minst 44px hög – lätt att träffa */
-  color: var(--plum);
-  font-weight: 600;
-}
-
-.projekt-las-mer:hover {
-  text-decoration-color: var(--cta);
-  text-decoration-thickness: 2px;
-}
-
 .projekt-knapp:hover {
   background-color: var(--plum);
   color: var(--canvas);
+}
+
+/* Sekundär knapp: bara en ram, ingen fyllning */
+.projekt-knapp.sekundar {
+  background-color: transparent;
+  border: 2px solid var(--plum);
+  padding: 10px 22px;                    /* 2px mindre än vanligt – ramen tar de 2px */
+}
+
+.projekt-knapp.sekundar:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+/* "Byggd med React" – en liten etikett uppe till vänster på bilden */
+.projekt-react {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background-color: var(--plum);
+  color: var(--canvas);
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .projekt-knapp:focus-visible {
@@ -104,4 +118,4 @@
 .projekt-kort:hover {
   transform: translateY(-8px);                    /* kortet lyfts 4px uppåt */
   box-shadow: 0 8px 16px rgba(46, 26, 38, 0.18);  /* skuggan blir större */
-}
+}

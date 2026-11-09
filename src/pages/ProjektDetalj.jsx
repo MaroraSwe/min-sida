@@ -17,6 +17,7 @@ function ProjektDetalj() {
       <section className="projekt-detalj">
         <h2>Projektet finns inte</h2>
         <p>
+          Det finns inget projekt med nummer {id}.{" "}
           <Link to="/projekt">Till alla projekt</Link>
         </p>
       </section>

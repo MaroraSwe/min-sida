@@ -1,0 +1,54 @@
+/* Statistik på Om mig – en egen rad över hela bredden */
+.statistik {
+  grid-column: 1 / -1;                   /* går över hela bredden */
+  order: 4;                              /* hamnar efter "Mina styrkor" */
+  padding-top: 32px;
+  border-top: 1px solid var(--secondary-light);
+}
+
+.statistik h3 {
+  margin: 0 0 20px;
+  padding-top: 0;
+}
+
+.statistik-lista {
+  display: grid;
+  gap: 12px;
+  max-width: 560px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.statistik-lista li {
+  display: grid;
+  grid-template-columns: 100px 1fr auto; /* namn – stapel – antal */
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.statistik-namn {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Stapeln: en grå bana med en färgad del inuti */
+.statistik-stapel {
+  height: 12px;
+  border-radius: 999px;
+  background-color: var(--secondary-light);
+  overflow: hidden;
+}
+
+.statistik-stapel span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--cta);
+}
+
+.statistik-antal {
+  opacity: 0.8;
+  white-space: nowrap;
+}

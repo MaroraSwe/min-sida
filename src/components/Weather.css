@@ -1,0 +1,92 @@
+/* Väderkorten – mobil först, samma stil som projektkorten */
+.weather {
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.weather h2 {
+  margin: 0 0 24px;
+  font-size: 32px;
+  text-align: center;
+}
+
+.weather-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));   /* lika många kort som får plats */
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weather-kort {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(46, 26, 38, 0.12);
+  text-align: center;
+}
+
+.weather-kort h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.weather-temp {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--plum);
+}
+
+.weather-vind {
+  margin: 4px 0 0;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.weather-fel {
+  color: #b3261e;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* "Välj stad": en meny och ett kort */
+.weather-valj {
+  padding-top: 0;                        /* sitter direkt under väderkorten */
+}
+
+.weather-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 280px;
+  margin: 0 auto 16px;
+  font-weight: 600;
+}
+
+.weather-label select {
+  min-height: 44px;                      /* lätt att träffa med tummen */
+  padding: 10px 12px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--plum);
+  font: inherit;
+  font-weight: 400;
+}
+
+.weather-ett {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .weather {
+    padding: 64px 32px;
+  }
+
+  .weather-valj {
+    padding-top: 0;
+  }
+}

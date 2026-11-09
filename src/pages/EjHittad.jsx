@@ -1,0 +1,25 @@
+import { Link, useNavigate } from "react-router-dom";
+import "./EjHittad.css";
+
+// 404-sidan: visas när adressen inte finns, t.ex. /hejsan
+function EjHittad() {
+  const navigate = useNavigate(); // låter koden byta sida
+
+  return (
+    <section className="ej-hittad">
+      <p className="ej-hittad-kod">404</p>
+      <h1>Sidan finns inte</h1>
+      <p>Adressen kan vara felstavad, eller så har sidan flyttats.</p>
+
+      <div className="ej-hittad-knappar">
+        <Link className="hero-knapp" to="/">
+          Till startsidan
+        </Link>
+        {/* navigate(-1) = som webbläsarens bakåtknapp */}
+        <button onClick={() => navigate(-1)}>Gå tillbaka</button>
+      </div>
+    </section>
+  );
+}
+
+export default EjHittad;

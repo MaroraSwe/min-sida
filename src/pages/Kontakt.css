@@ -92,6 +92,19 @@
 }
 
 
+/* "500 tecken kvar" under textrutan */
+.tecken-kvar {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.tecken-kvar.varning {
+  color: #b3261e;                   /* röd när det börjar ta slut */
+  font-weight: 600;
+  opacity: 1;
+}
+
 /* Felmeddelandet – rött */
 .kontakt-fel {
   margin: 4px 0 0;
@@ -109,7 +122,7 @@
 
 .kontakt-form button:disabled {
      opacity: 0.6;
-     cursor: wait;
+     cursor: not-allowed;
 }
 
 @media (min-width: 800px) {

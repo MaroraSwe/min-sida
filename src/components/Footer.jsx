@@ -1,8 +1,8 @@
 import './Footer.css';
+import { NAME, EMAIL, GITHUB_USER, LINKEDIN_URL } from '../data/settings';
+import { copyright } from '../utils/text';
 
 function Footer() {
-  const år = new Date().getFullYear();   // årtalet just nu, t.ex. 2026
-
   return (
     <footer className="footer" id="kontakt">
       <p className="footer-message">
@@ -11,15 +11,16 @@ function Footer() {
       <div className="footer-kontakt">
         <h2>Kontakt</h2>
         <p>
-          <a href="mailto:meenakshi.arora09@gmail.com" target="_blank" rel="noreferrer">E-post</a>
+          {/* Template literals: ${...} sätter in värdet från settings.js */}
+          <a href={`mailto:${EMAIL}`} target="_blank" rel="noreferrer">E-post</a>
           {" · "}
-          <a href="https://github.com/MaroraSwe" target="_blank" rel="noreferrer">GitHub</a>
+          <a href={`https://github.com/${GITHUB_USER}`} target="_blank" rel="noreferrer">GitHub</a>
           {" · "}
-          <a href="https://www.linkedin.com/in/meenakshiarora0409" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn</a>
         </p>
       </div>
 
-      <p className="footer-bottom">© {år} Meenakshi Arora · Gjord med React ❤️</p>
+      <p className="footer-bottom">{copyright(NAME)} · Gjord med React ❤️</p>
     </footer>
   );
 }

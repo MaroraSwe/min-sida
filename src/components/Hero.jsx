@@ -1,20 +1,22 @@
 import "./Hero.css";
 import herobild from "../assets/Self.jpg";
 import { Link } from "react-router-dom";
+import { halsning } from "../utils/text";
 
 
 function Hero({ namn }) {
     return (
         <section className="hero" aria-labelledby="hero-title">
             <div className="hero-innehall">
-                <p className="hero-intro">Hej, jag heter {namn}!</p>
+                {/* halsning() ger "God morgon", "Hej", "God kväll" eller "God natt" */}
+                <p className="hero-intro">{halsning()}, jag heter {namn}!</p>
                 <h2 id="hero-title">Jag lär mig att bygga webben.</h2>
                 <p className="hero-text">Välkommen till min portfolio</p>
                 <Link className="hero-knapp" to="/om-mig">
                  Läs Vidare
                 </Link>
             </div>
-            
+
             <div id="wrapper">
             <img
                 className="hero-bild"

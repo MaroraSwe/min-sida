@@ -1,9 +1,11 @@
 .navbar {
   display: flex;                    /* lägger logo och länkar på en rad */
-  justify-content: flex-end;        /* länkarna längst till höger */
+  justify-content: space-between;        /* länkarna längst till vänster, knappen till höger */
   align-items: center;
-  padding: 16px 32px;
+  padding: 12px 20px;
   background-color: var(--plum);
+  font-size: 18px;
+  font-weight: 500;
   position: sticky;                 /* navbaren följer med när man scrollar */
   top: 0;                            /* navbaren fastnar längst upp */
   z-index: 10;                      /* navbaren ligger ovanför allt annat */
@@ -11,43 +13,95 @@
 
 .logo {
   margin: 0;                        /* tar bort h1:ans stora marginal */
-  letter-spacing: normal;
-  color: var(--canvas);
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.lankar {
-  display: flex;
-  gap: 24px;                        /* avstånd mellan länkarna */
-}
-
-.lankar a {
-  display: inline-block;
-  padding: 10px 4px;
   color: var(--canvas);
   text-decoration: none;            /* tar bort understrykningen */
 }
 
-.lankar a:hover {
+.lankar {
+  display: none;               /* dolda tills man öppnar menyn på mobil */
+  position: absolute;            /* länkarna hamnar ovanpå allt annat */
+  top: 100%;                       /* länkarna hamnar precis under navbaren */
+  right: 20px;                       /* i linje med knappen */
+  flex-direction: column;        /* länkarna hamnar under varandra */
+  min-width: 180px;                /* länkarna får en minsta bredd */
+  padding: 8px 0;                    /* lite luft ovanför och under länkarna */
+  background-color: var(--plum);
+  border-radius: 0 0  8px 8px;   /* rundade hörn längst ner */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* skugga under länkarna */
+
+}
+
+.lankar.oppen {
+  display: flex;                  /* länkarna visas när man öppnar menyn */
+}
+
+.lankar a {
+  display: inline-block;
+  padding: 12px 20px;
+  color: var(--canvas);
+  text-decoration: none;            /* tar bort understrykningen */
+}
+
+.logo:focus-visible,
+ .lankar a:focus-visible {
+   outline: 2px solid var(--cta);
+   outline-offset: 4px;
+ }
+  
+.hamburgare {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--canvas);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.hamburgare:focus-visible {
+  outline: 2px solid var(--cta);
+}
+
+.logo:hover,
+ .lankar a:hover {
   color: var(--cta);
   text-decoration: underline;
 }
 
-/* På mobil får länkarna hamna under loggan */
-@media (max-width: 600px) {
+
+/* Länken till sidan man står på (NavLink ger den klassen "active") */
+.lankar a.active {
+  font-weight: 700;
+  border-bottom: 2px solid currentColor;
+}
+
+
+/* På större skärm: länkarna på en rad och ingen hamburgarknapp */
+@media (min-width: 701px) {
   .navbar {
-    flex-wrap: wrap;
-    gap: 8px 16px;
-    padding: 12px 20px;
+  padding: 16px 32px;
   }
 
-  .lankar {
-    flex-wrap: wrap;
-    gap: 8px 16px;
+.hamburgare {
+    display: none;                  /* hamburgarknappen döljs */
+  }
+
+  .lankar, 
+  .lankar.oppen {
+    display: flex;
+    position: static;  
+    flex-direction: row;        /* länkarna hamnar i navbaren */
+    gap: 24px;
+    min-width: 0;                     /* länkarna får ingen minsta bredd */
+    padding: 0;                        /* ingen extra luft ovanför och under länkarna */
+    background-color: transparent;  /* ingen bakgrundsfärg */
+    box-shadow: none;                 /* ingen skugga */
   }
 
   .lankar a {
-    white-space: nowrap;            /* "Om Mig" delas inte på två rader */
+    padding: 10px 4px;            
   }
 }

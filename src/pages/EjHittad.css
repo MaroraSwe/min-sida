@@ -1,0 +1,43 @@
+/* Mobil först */
+.ej-hittad {
+  padding: 64px 20px;
+  text-align: center;
+}
+
+.ej-hittad-kod {
+  margin: 0;
+  font-size: clamp(4rem, 15vw, 6rem);   /* växer mjukt med skärmen */
+  font-weight: 800;
+  line-height: 1;
+  color: var(--plum);
+}
+
+.ej-hittad-knappar {
+  display: flex;
+  flex-wrap: wrap;                      /* knapparna hamnar under varandra om det blir trångt */
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.ej-hittad-knappar button {
+  padding: 12px 24px;
+  border: 2px solid var(--plum);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--plum);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ej-hittad-knappar button:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+@media (min-width: 600px) {
+  .ej-hittad {
+    padding: 96px 32px;
+  }
+}

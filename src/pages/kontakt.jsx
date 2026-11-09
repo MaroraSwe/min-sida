@@ -2,6 +2,8 @@ import "./Kontakt.css";
 import kontaktBild from "../assets/kontakt.svg";
 import { useState } from "react";
 
+const MAX_TECKEN = 500; // längsta tillåtna meddelande
+
 export default function Kontakt() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -9,6 +11,10 @@ export default function Kontakt() {
   const [skickat, setSkickat] = useState(false);
   const [fel, setFel] = useState("");
   const [skickar, setSkickar] = useState(false); // NYTT: true medan det skickas
+
+  // Räknas ut på nytt varje gång man skriver – behöver inget eget state
+  const kvar = MAX_TECKEN - message.length;
+  const fardigt = message.trim() !== "" && kvar >= 0; // inte tomt och inte för långt
 
   async function handleSubmit(e) {
     e.preventDefault(); // stop page reload
@@ -91,11 +97,16 @@ export default function Kontakt() {
           rows="5"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          aria-describedby="tecken-kvar"
         />
+        {/* Röd text när det är mindre än 50 tecken kvar */}
+        <p id="tecken-kvar" className={kvar < 50 ? "tecken-kvar varning" : "tecken-kvar"}>
+          {kvar} tecken kvar
+        </p>
 
         {fel && <p className="kontakt-fel">{fel}</p>}
 
-        <button type="submit" disabled={skickar}>
+        <button type="submit" disabled={skickar || !fardigt}>
           {skickar ? "Skickar..." : "Skicka"}
         </button>
 

@@ -1,0 +1,58 @@
+/* Mobil först */
+.projekt-detalj {
+  box-sizing: border-box;           /* padding räknas in i bredden */
+  width: 100%;                      /* fyll raden, men aldrig bredare än max-width */
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 56px;
+  text-align: left;
+}
+
+.projekt-detalj h2 {
+  margin: 16px 0;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+.projekt-detalj-tillbaka {
+  color: var(--plum);
+  font-weight: 600;
+}
+
+.projekt-detalj-bild {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.projekt-detalj h3 {
+  margin: 24px 0 12px;
+  font-size: 20px;
+}
+
+.projekt-detalj-teknik {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.projekt-detalj-teknik li {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background-color: var(--secondary-light);
+  color: var(--plum);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@media (min-width: 600px) {
+  .projekt-detalj {
+    padding: 64px 32px 72px;
+  }
+}

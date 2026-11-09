@@ -1,6 +1,7 @@
 import "./OmMig.css";
 import Self from "../assets/Self.jpg";
 import { useState } from "react";
+import Statistik from "../components/Statistik";
 
 const egenskaper = ["Inspiratör", "Ledare", "Samordnare", "Lagspelare"];
 
@@ -85,6 +86,9 @@ function OmMig() {
           ))}
         </ul>
       </div>
+
+      {/* Statistik från projekt.json – en egen rad längst ner */}
+      <Statistik />
     </section>
   );
 }

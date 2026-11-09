@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "titel": "Min portfoliosida",
+    "beskrivning": "Sidan du tittar på nu. Byggd med React och CSS.",
+    "bild": "Hero1.jpg",
+    "lank": "https://github.com/MaroraSwe/min-sida",
+    "teknik": ["React", "CSS", "Git"]
+  },
+  {
+    "id": 2,
+    "titel": "Räknare",
+    "beskrivning": "Interaktiv räknare med useState som byter färg efter värdet.",
+    "bild": "Hero2.jpg",
+    "lank": "https://github.com/MaroraSwe/min-sida",
+    "teknik": ["React", "useState"]
+  },
+  {
+    "id": 3,
+    "titel": "Kontaktformulär",
+    "beskrivning": "Formulär med kontrollerade fält, validering och tackmeddelande.",
+    "bild": "Hero3.jpg",
+    "lank": "https://github.com/MaroraSwe/min-sida",
+    "teknik": ["React", "useState", "Formspree"]
+  }
+]

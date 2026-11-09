@@ -34,10 +34,16 @@
   margin-bottom: 16px;                   /* luft mellan texten och knappen */
 }
 
-/* Teknik-etiketten, t.ex. "React" */
-.projekt-info .projekt-teknik {
-  align-self: flex-start;           /* etiketten blir bara så bred som texten */
+/* Teknik-etiketterna, t.ex. "React" – en rad som radbryts vid behov */
+.projekt-taggar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin: 0 0 16px;
+}
+
+.projekt-info .projekt-teknik {
+  margin: 0;
   padding: 1px 8px;
   border-radius: 999px;             /* helt runda kanter */
   background-color: var(--secondary-light);
@@ -57,6 +63,32 @@
   font-weight: 600;
   text-decoration: none;                 /* tar bort understrykningen */
   align-self: center;                    /* knappen hamnar i mitten av kortet */
+}
+
+/* Raden längst ner med "Läs mer" och "Se projektet" */
+.projekt-knappar {
+  margin-top: auto;                      /* skjuter raden längst ner i kortet */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 20px;
+}
+
+.projekt-knappar .projekt-knapp {
+  margin-top: 0;
+}
+
+.projekt-las-mer {
+  display: inline-block;
+  padding: 12px 4px;                     /* minst 44px hög – lätt att träffa */
+  color: var(--plum);
+  font-weight: 600;
+}
+
+.projekt-las-mer:hover {
+  text-decoration-color: var(--cta);
+  text-decoration-thickness: 2px;
 }
 
 .projekt-knapp:hover {

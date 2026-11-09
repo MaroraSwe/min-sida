@@ -8,6 +8,7 @@ import ProjektSida from "./pages/ProjektSida";
 import ProjektDetalj from "./pages/ProjektDetalj";
 import Kontakt from "./pages/kontakt";
 import EjHittad from "./pages/EjHittad";
+import FizzBuzz from "./pages/FizzBuzz";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Route path="/projekt" element={<ProjektSida />} />
         <Route path="/projekt/:id" element={<ProjektDetalj />} />
         <Route path="/kontakt" element={<Kontakt />} />
+        {/* Dold sida: finns inte i menyn, bara om man skriver /fizzbuzz */}
+        <Route path="/fizzbuzz" element={<FizzBuzz />} />
         {/* * = "allt annat". Står sist och fångar adresser som inte finns */}
         <Route path="*" element={<EjHittad />} />
       </Routes>

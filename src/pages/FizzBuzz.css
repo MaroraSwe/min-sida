@@ -1,0 +1,58 @@
+/* FizzBuzz-sidan – mobil först */
+.fizzbuzz {
+  box-sizing: border-box;           /* padding räknas in i bredden */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 56px;
+  text-align: left;
+}
+
+.fizzbuzz h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+.fizzbuzz-intro {
+  max-width: 55ch;
+  margin: 0 0 24px;
+}
+
+/* Ett rutnät med så många rutor per rad som får plats */
+.fizzbuzz-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;                 /* tar bort numren framför – talen står ju i rutan */
+}
+
+.fizzbuzz-lista li {
+  padding: 10px 4px;
+  border: 1px solid var(--secondary-light);
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--plum);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Samma färger som resten av sidan: ljus, mellan och rosé */
+.fizzbuzz-lista li.fb-fizz {
+  background-color: var(--secondary-light);
+}
+
+.fizzbuzz-lista li.fb-buzz {
+  background-color: var(--secondary);
+}
+
+.fizzbuzz-lista li.fb-fizzbuzz {
+  background-color: var(--cta);
+}
+
+@media (min-width: 600px) {
+  .fizzbuzz {
+    padding: 64px 32px 72px;
+  }
+}

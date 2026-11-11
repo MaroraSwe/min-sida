@@ -1,0 +1,23 @@
+/* Sidan /projekt-api – använder .projekt och .projekt-lista från Projekt.css */
+.projekt-api {
+  min-height: 60vh;                 /* sidan ser inte tom ut medan den laddar */
+}
+
+.projekt-api h2 {
+  margin-bottom: 8px;               /* rubriken och källan hör ihop */
+}
+
+.projekt-api-kalla {
+  margin: 0 0 24px;
+  font-size: 14px;
+  color: var(--plum);
+}
+
+.projekt-api-kalla code {
+  font-size: 13px;
+}
+
+.projekt-api-fel {
+  color: #b3261e;                   /* samma röda som på resten av sidan */
+  font-weight: 600;
+}

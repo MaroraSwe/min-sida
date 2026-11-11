@@ -9,10 +9,15 @@ import ProjektDetalj from "./pages/ProjektDetalj";
 import Kontakt from "./pages/kontakt";
 import EjHittad from "./pages/EjHittad";
 import FizzBuzz from "./pages/FizzBuzz";
+import ScrollToTop from "./components/ScrollToTop";
+import MinServer from "./components/MinServer";
 
 function App() {
   return (
     <>
+      {/* Rullar upp till toppen vid varje sidbyte */}
+      <ScrollToTop />
+
       <Navbar
         lankar={[
           { namn: "Hem", till: "/" },
@@ -30,6 +35,8 @@ function App() {
         <Route path="/kontakt" element={<Kontakt />} />
         {/* Dold sida: finns inte i menyn, bara om man skriver /fizzbuzz */}
         <Route path="/fizzbuzz" element={<FizzBuzz />} />
+        {/* Hämtar från min egen server – fungerar när servern körs på datorn */}
+        <Route path="/server" element={<MinServer />} />
         {/* * = "allt annat". Står sist och fångar adresser som inte finns */}
         <Route path="*" element={<EjHittad />} />
       </Routes>

@@ -26,13 +26,15 @@
 }
 
 .projekt-info h3 {
-  margin: 0 0 8px;
-  font-size: 20px;
+  margin: 0 0 6px;
+  font-size: 18px;                       /* lite mindre rubrik */
   color: var(--plum);
 }
 
 .projekt-info p {
-  margin-bottom: 16px;                   /* luft mellan texten och knappen */
+  margin: 0 0 14px;                      /* luft mellan texten och etiketterna */
+  font-size: 15px;                       /* lite mindre än sidans vanliga text */
+  line-height: 1.5;                      /* bekvämt radavstånd */
 }
 
 /* Teknik-etiketterna, t.ex. "React" – en rad som radbryts vid behov */
@@ -57,10 +59,12 @@
 .projekt-knapp {
   display: inline-block;
   margin-top: auto;                      /* skjuter knappen längst ner */
-  padding: 12px 24px;                /* samma storlek som hero-knappen */
-  border-radius: 6px;                /* samma storlek som hero-knappen */
+  padding: 9px 18px;                     /* mindre än hero-knappen, men lätt att träffa */
+  border-radius: 6px;
   background-color: var(--cta);
   color: var(--plum);
+  font-size: 15px;                       /* samma storlek som beskrivningen */
+  line-height: 1.4;                      /* samma höjd på mobil och dator */
   font-weight: 600;
   text-decoration: none;                 /* tar bort understrykningen */
   align-self: center;                    /* knappen hamnar i mitten av kortet */
@@ -73,7 +77,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 8px 20px;
+  gap: 8px 12px;                         /* 8px mellan raderna, 12px mellan knapparna */
 }
 
 .projekt-knappar .projekt-knapp {
@@ -89,7 +93,7 @@
 .projekt-knapp.sekundar {
   background-color: transparent;
   border: 2px solid var(--plum);
-  padding: 10px 22px;                    /* 2px mindre än vanligt – ramen tar de 2px */
+  padding: 7px 16px;                     /* 2px mindre än vanligt – ramen tar de 2px */
 }
 
 .projekt-knapp.sekundar:hover {

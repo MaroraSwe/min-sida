@@ -1,0 +1,115 @@
+/* Sidan /server – mobil först */
+.min-server {
+  box-sizing: border-box;           /* padding räknas in i bredden */
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 56px;
+  text-align: left;
+}
+
+.min-server h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+.min-server-intro {
+  margin: 0 0 24px;
+  opacity: 0.8;
+}
+
+/* Kortet med svaret från /hej – samma vita kort som projekten */
+.min-server-kort {
+  padding: 24px 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(46, 26, 38, 0.08);
+}
+
+.min-server-meddelande {
+  margin: 0 0 8px;
+  color: var(--plum);
+  font-weight: 600;
+}
+
+.min-server-kort h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.min-server-roll {
+  margin: 4px 0 20px;
+  opacity: 0.8;
+}
+
+.min-server-kort h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+/* Intressena som små etiketter, som teknikerna på projektkorten */
+.min-server-intressen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.min-server-intressen li {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background-color: var(--secondary-light);
+  color: var(--plum);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Slumptalet */
+.min-server-slump {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.min-server-slump button {
+  min-height: 44px;                 /* lätt att träffa med fingret */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--cta);
+  color: var(--plum);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.min-server-slump button:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+.min-server-tal {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--plum);
+}
+
+.min-server-fel {
+  color: #b3261e;                   /* samma röda som på resten av sidan */
+  font-weight: 600;
+}
+
+@media (min-width: 600px) {
+  .min-server {
+    padding: 64px 32px 72px;
+  }
+
+  .min-server-kort {
+    padding: 32px;
+  }
+}

@@ -12,7 +12,7 @@
 
 .weather-lista {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));   /* lika många kort som får plats */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));   /* lika många kort som får plats */
   gap: 16px;
   margin: 0;
   padding: 0;
@@ -20,7 +20,7 @@
 }
 
 .weather-kort {
-  padding: 20px;
+  padding: 14px 16px;
   border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 0 2px 8px rgba(46, 26, 38, 0.12);
@@ -28,26 +28,58 @@
 }
 
 .weather-kort h3 {
-  margin: 0 0 4px;
-  font-size: 18px;
+  margin: 0 0 2px;
+  font-size: 16px;
 }
 
 .weather-temp {
   margin: 0;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--plum);
 }
 
 .weather-vind {
-  margin: 4px 0 0;
-  font-size: 15px;
+  margin: 2px 0 0;
+  font-size: 14px;
   opacity: 0.8;
 }
 
 .weather-fel {
   color: #b3261e;
   font-weight: 600;
+  text-align: center;
+}
+
+/* "Vädret just nu": knappen som växlar mellan Helsingborg och där du är */
+.weather-plats-knapp {
+  display: block;
+  min-height: 34px;
+  margin: 12px auto 0;
+  padding: 4px 14px;
+  border: 1.5px solid var(--plum);
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--plum);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.weather-plats-knapp:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+.weather-plats-knapp:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.weather-info {
+  margin: 12px 0 0;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -59,26 +91,144 @@
 .weather-label {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  max-width: 280px;
-  margin: 0 auto 16px;
+  gap: 4px;
+  max-width: 240px;
+  margin: 0 auto 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .weather-label select {
-  min-height: 44px;                      /* lätt att träffa med tummen */
-  padding: 10px 12px;
+  box-sizing: border-box;
+  min-height: 38px;                      /* fortfarande lätt att träffa med tummen */
+  padding: 6px 10px;
   border: 1px solid var(--secondary);
   border-radius: 8px;
   background-color: #ffffff;
   color: var(--plum);
   font: inherit;
+  font-size: 15px;
   font-weight: 400;
 }
 
 .weather-ett {
-  max-width: 280px;
+  box-sizing: border-box;                /* lika bred som menyn ovanför */
+  max-width: 240px;
   margin: 0 auto;
+}
+
+/* "Hela världen": sökruta, ett kort och andra träffar */
+.weather-varlden {
+  padding-top: 0;
+}
+
+.weather-sok {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 360px;
+  margin: 0 auto 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.weather-sok-rad {
+  display: flex;
+  gap: 8px;
+}
+
+.weather-sok input {
+  flex: 1;                               /* fältet tar all plats som blir över */
+  min-width: 0;
+  box-sizing: border-box;
+  min-height: 38px;
+  padding: 6px 10px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--plum);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.weather-sok button {
+  box-sizing: border-box;
+  min-height: 38px;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--cta);
+  color: var(--plum);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.weather-sok button:hover {
+  background-color: var(--plum);
+  color: var(--canvas);
+}
+
+.weather-sok button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.weather-tips {
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.weather-plats {
+  margin: 0 0 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.75;
+}
+
+.weather-andra {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.weather-andra p {
+  margin: 0 0 8px;
+}
+
+.weather-andra ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weather-traff {
+  min-height: 32px;
+  padding: 4px 12px;
+  border: 1.5px solid var(--plum);
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: var(--plum);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.weather-traff:hover {
+  background-color: var(--canvas);
+}
+
+.weather-traff.aktiv {
+  background-color: var(--plum);       /* den som visas är ifylld */
+  color: var(--canvas);
 }
 
 @media (min-width: 600px) {

@@ -1,5 +1,5 @@
 // Hämtar vädret för EN stad från Open-Meteo.
-// Ligger i en egen fil eftersom både Weather.jsx och CityWeather.jsx använder den.
+// Ligger i en egen fil eftersom både Weather.jsx och WorldWeather.jsx använder den.
 const BASE_URL = "https://api.open-meteo.com/v1/forecast";
 
 export async function fetchCity(city) {

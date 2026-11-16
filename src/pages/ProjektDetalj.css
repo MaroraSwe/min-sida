@@ -51,6 +51,51 @@
   font-weight: 600;
 }
 
+/* "Prova själv": väderrutorna inuti projektsidan */
+.projekt-detalj-demo {
+  margin: 24px 0 8px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--secondary-light);
+}
+
+.projekt-detalj-demo h3 {
+  margin-top: 0;
+}
+
+/* Väderrutorna och att göra-listan har egen luft runt sig på startsidan.
+   Här inne i den rosa rutan behövs den inte. */
+.projekt-detalj-demo .weather,
+.projekt-detalj-demo .todo {
+  max-width: none;
+  padding: 0 0 24px;
+}
+
+.projekt-detalj-demo .weather:last-child,
+.projekt-detalj-demo .todo:last-child {
+  padding-bottom: 0;
+}
+
+.projekt-detalj-demo .weather h2,
+.projekt-detalj-demo .todo h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Menyn och kortet under "Välj stad" till vänster, som resten av sidan */
+.projekt-detalj-demo .weather-label,
+.projekt-detalj-demo .weather-ett,
+.projekt-detalj-demo .weather-sok,
+.projekt-detalj-demo .weather-plats-knapp {
+  margin-left: 0;
+}
+
+.projekt-detalj-demo .weather-info {
+  text-align: left;
+}
+
 @media (min-width: 600px) {
   .projekt-detalj {
     padding: 64px 32px 72px;

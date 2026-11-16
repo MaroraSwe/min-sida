@@ -4,9 +4,13 @@
 import bild1 from "../assets/Hero1.jpg";
 import bild2 from "../assets/Hero2.jpg";
 import bild3 from "../assets/Hero3.jpg";
+import vaderBild from "../assets/vader.svg";
+import todoBild from "../assets/todo.svg";
 
 export const bilder = {
   "Hero1.jpg": bild1,
   "Hero2.jpg": bild2,
   "Hero3.jpg": bild3,
+  "vader.svg": vaderBild,
+  "todo.svg": todoBild,
 };

@@ -27,14 +27,16 @@ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .filter-knapp {
-  min-height: 44px;                      /* lätt att träffa med tummen */
-  padding: 8px 16px;
-  border: 2px solid var(--plum);
+  min-height: 34px;                      /* fortfarande lätt att träffa med tummen */
+  padding: 4px 14px;
+  border: 1.5px solid var(--plum);
   border-radius: 999px;
   background-color: #ffffff;
   color: var(--plum);
   font: inherit;
+  font-size: 14px;                       /* fast storlek: blir inte större på stor skärm */
   font-weight: 600;
+  line-height: 1.4;
   cursor: pointer;
 }
 
@@ -59,28 +61,30 @@ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 .projekt-falt {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   width: 100%;
-  max-width: 280px;
+  max-width: 240px;
   text-align: left;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .projekt-falt input,
 .projekt-falt select {
-  min-height: 44px;
-  padding: 10px 12px;
+  min-height: 38px;
+  padding: 6px 10px;
   border: 1px solid var(--secondary);
   border-radius: 8px;
   background-color: #ffffff;
   color: var(--plum);
   font: inherit;
+  font-size: 15px;
   font-weight: 400;
 }
 
 .projekt-antal {
   margin: 0 0 24px;
-  font-size: 15px;
+  font-size: 14px;
   opacity: 0.8;
 }
 

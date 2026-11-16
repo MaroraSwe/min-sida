@@ -26,4 +26,22 @@ export const projekt = [
     bild: "Hero3.jpg",
     lank: "https://github.com/MaroraSwe/min-sida",
   },
+  {
+    id: 4,
+    titel: "Väder",
+    beskrivning: "Vädret där du är eller i Helsingborg. Sök vilken plats som helst i världen. Data från Open-Meteos öppna API.",
+    teknik: ["React", "useEffect", "API"],
+    bild: "vader.svg",
+    lank: "https://github.com/MaroraSwe/min-sida",
+    demo: "vader",
+  },
+  {
+    id: 5,
+    titel: "Att göra",
+    beskrivning: "En att göra-lista som sparar uppgifterna i webbläsaren, så att de finns kvar när du laddar om sidan.",
+    teknik: ["React", "useState", "localStorage"],
+    bild: "todo.svg",
+    lank: "https://github.com/MaroraSwe/min-sida",
+    demo: "todo",
+  },
 ];

@@ -1,3 +1,5 @@
+// ANVÄNDS INTE JUST NU: "Hela världen" (WorldWeather.jsx) har tagit över.
+// Filen får ligga kvar som exempel. Du kan ta bort den om du vill.
 // Välj en stad i menyn – så hämtas vädret för just den staden.
 import "./Weather.css";
 import { useState, useEffect } from "react";

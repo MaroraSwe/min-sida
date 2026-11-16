@@ -102,3 +102,39 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* ===== Mandalan i bakgrunden =====
+   EN stor mandala mitt på skärmen, bakom allt innehåll på alla sidor.
+   position: fixed = den står still mitt på skärmen medan sidan scrollar förbi.
+   Bilden är en SCHABLON (mask): den bestämmer formen, background-color bestämmer färgen. */
+#root::before {
+  content: "";                        /* ::before syns bara om den har content, även tomt */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);   /* flyttar den halva sin storlek = exakt i mitten */
+  width: min(1126px, 100%);           /* lika bred som sidan (#root är 1126px), aldrig bredare än skärmen.
+                                         Är skärmen lägre än mandalan klipps toppen och botten – det är okej */
+  aspect-ratio: 1;                    /* lika hög som bred: en rund mandala */
+  z-index: 0;                         /* ovanför sektionernas bakgrundsfärg … */
+  background-color: var(--secondary); /* mandalans färg */
+  opacity: 0.4;
+  mix-blend-mode: multiply;           /* … men BLANDAS med färgen under, så den syns på alla
+                                         bakgrunder: mörkare rosa på rosa, ljusrosa på vitt */
+  pointer-events: none;               /* går inte att klicka på – klicken går igenom */
+  -webkit-mask: url("./assets/mandala.webp") center / contain no-repeat;
+  mask: url("./assets/mandala.webp") center / contain no-repeat;
+}
+
+/* Innehållet (text, bilder, kort, knappar) läggs OVANPÅ mandalan med z-index: 1.
+   :where() gör regeln så svag som möjligt, så att egna position-regler (t.ex. absolute) vinner. */
+:where(#root > :not(nav, footer) > *) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footern ligger helt ovanpå mandalan */
+footer {
+  position: relative;
+  z-index: 1;
+}

@@ -75,6 +75,7 @@
 }
 
 /* Större skärm: text till vänster, bild till höger */
+
 @media (min-width: 800px) {
   .hero {
     grid-template-columns: 1fr 1fr;
@@ -84,4 +85,4 @@
   #wrapper {
     justify-self: end;              /* bilden mot högerkanten */
   }
-}
+}

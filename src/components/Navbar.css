@@ -40,6 +40,7 @@
   padding: 12px 20px;
   color: var(--canvas);
   text-decoration: none;            /* tar bort understrykningen */
+  border-bottom: 2px solid transparent; /* osynlig linje: plats för linjen vid hover/aktiv, så inget hoppar */
 }
 
 .logo:focus-visible,
@@ -65,17 +66,22 @@
   outline: 2px solid var(--cta);
 }
 
+/* Hover: bara färgen ändras, plus EN linje under länken.
+   (Förut kom text-decoration: underline OCH border-bottom på den aktiva sidan = två linjer.) */
 .logo:hover,
- .lankar a:hover {
+.lankar a:hover {
   color: var(--cta);
-  text-decoration: underline;
+}
+
+.lankar a:hover {
+  border-bottom-color: currentColor;  /* samma linje som den aktiva sidan har, men i rosé */
 }
 
 
 /* Länken till sidan man står på (NavLink ger den klassen "active") */
 .lankar a.active {
   font-weight: 700;
-  border-bottom: 2px solid currentColor;
+  border-bottom-color: currentColor;  /* den aktiva sidan har alltid sin linje */
 }
 
 
@@ -104,4 +110,4 @@
   .lankar a {
     padding: 10px 4px;            
   }
-}
+}

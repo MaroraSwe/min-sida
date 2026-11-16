@@ -93,4 +93,4 @@ function OmMig() {
   );
 }
 
-export default OmMig;
+export default OmMig;

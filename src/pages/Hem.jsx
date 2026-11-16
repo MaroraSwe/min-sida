@@ -5,7 +5,8 @@ import GitHubRepon from "../components/GitHubRepon";
 import Weather from "../components/Weather";
 import CityWeather from "../components/CityWeather";
 import Todo from "../components/Todo";
-import Raknare from "../components/Raknare";
+// Räknare är gömd just nu. Visa den igen: ta bort // på nästa rad, och {/* */} runt <Raknare /> längre ner.
+// import Raknare from "../components/Raknare";
 import { NAME } from "../data/settings";
 import { fornamn } from "../utils/text";
 
@@ -19,7 +20,7 @@ function Hem() {
       <Weather />
       <CityWeather />
       <Todo />
-      <Raknare />
+      {/* <Raknare /> */}
     </>
   );
 }

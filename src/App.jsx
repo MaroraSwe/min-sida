@@ -12,6 +12,8 @@ import FizzBuzz from "./pages/FizzBuzz";
 import ScrollToTop from "./components/ScrollToTop";
 import MinServer from "./components/MinServer";
 import ProjektFranApi from "./pages/ProjektFranApi";
+import ContactBackend from "./components/ContactBackend";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -40,6 +42,10 @@ function App() {
         <Route path="/server" element={<MinServer />} />
         {/* Projekten hämtade från min egen server i stället för från projekt.json */}
         <Route path="/projekt-api" element={<ProjektFranApi />} />
+        {/* Kontaktformuläret som skickar till min egen server */}
+        <Route path="/kontakt-server" element={<ContactBackend />} />
+        {/* Extrauppgift: alla meddelanden som servern har tagit emot */}
+        <Route path="/admin" element={<Admin />} />
         {/* * = "allt annat". Står sist och fångar adresser som inte finns */}
         <Route path="*" element={<EjHittad />} />
       </Routes>

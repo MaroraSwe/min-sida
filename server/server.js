@@ -11,6 +11,10 @@ const PORT = 3001; // Min sida använder dörr 5173 – servern får en egen dö
 // Utan den här raden stoppar webbläsaren svaret med ett CORS-fel.
 app.use(cors());
 
+// Lär servern att läsa JSON som skickas med POST. Lägger datan i req.body.
+// Måste stå FÖRE alla routes – precis som cors().
+app.use(express.json());
+
 // GET / – en lista över vad servern kan svara på
 app.get("/", (req, res) => {
   res.json({
@@ -24,6 +28,7 @@ app.get("/", (req, res) => {
       "/projekt/1",
       "/projekt/teknik/React",
       "/statistik",
+      "/kontakt",
     ],
   });
 });
@@ -99,6 +104,43 @@ app.get("/projekt/:id", (req, res) => {
 // Extrauppgift: GET /statistik – hur många projekt jag har
 app.get("/statistik", (req, res) => {
   res.json({ antalProjekt: projekt.length });
+});
+
+// ---------- Kontaktformulär ----------
+
+// Meddelandena sparas i en lista i minnet.
+// OBS: startar servern om (t.ex. när du sparar server.js) blir listan tom igen.
+// På riktigt sparar man dem i en databas – men POST och req.body fungerar likadant.
+const meddelanden = [];
+
+// POST /kontakt – ta emot ett nytt meddelande från formuläret
+app.post("/kontakt", (req, res) => {
+  // req.body = datan som React skickade, redan omgjord till ett objekt av express.json()
+  const { namn, email, text } = req.body;
+
+  // Lita aldrig på det som skickas: vem som helst kan anropa API:et utan formuläret
+  if (!namn || namn.trim() === "" || !text || text.trim() === "") {
+    return res.status(400).json({ fel: "Namn och meddelande måste fyllas i" });
+  }
+
+  // Extrauppgift: varje meddelande får ett id och ett datum
+  const nytt = {
+    id: meddelanden.length + 1,
+    namn,
+    email,
+    text,
+    datum: new Date().toISOString(),
+  };
+  meddelanden.push(nytt);
+  console.log(`Nytt meddelande från ${namn}`);
+
+  // 201 = Created – något nytt har skapats
+  res.status(201).json({ meddelande: "Tack för ditt meddelande!" });
+});
+
+// GET /kontakt – alla meddelanden (admin-sidan hämtar härifrån)
+app.get("/kontakt", (req, res) => {
+  res.json(meddelanden);
 });
 
 app.listen(PORT, () => {

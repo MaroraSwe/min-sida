@@ -6,7 +6,11 @@ import { useState, useEffect } from "react";
 import { GITHUB_USER } from "../data/settings";
 import { snyggtDatum, kortText } from "../utils/text";
 
-const API_URL = `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=6`;
+// Hämta 10, så att det finns 6 kvar att visa även när några döljs nedan
+const API_URL = `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=10`;
+
+// Repon som inte ska visas här. Lägg till fler namn i listan, t.ex. ["min-sida", "test"]
+const DOLDA_REPON = ["min-sida"];
 
 function GitHubRepon() {
   // Tre lägen: laddar, fel och klart
@@ -44,6 +48,8 @@ function GitHubRepon() {
       <ul className="github-lista">
         {repon
           .filter((r) => !r.fork) // behåll bara mina egna, inte kopior (forkar)
+          .filter((r) => !DOLDA_REPON.includes(r.name)) // ! = "inte": hoppa över de dolda
+          .slice(0, 6) // högst 6 kort
           .map((r) => (
             <li key={r.id} className="github-kort">
               <h3>

@@ -106,7 +106,8 @@ img {
 /* ===== Mandalan i bakgrunden =====
    EN stor mandala mitt på skärmen, bakom allt innehåll på alla sidor.
    position: fixed = den står still mitt på skärmen medan sidan scrollar förbi.
-   Bilden är en SCHABLON (mask): den bestämmer formen, background-color bestämmer färgen. */
+   Bilden är en SCHABLON (mask): den bestämmer formen, background-color bestämmer färgen.
+   mandala.webp är din egen tuschteckning: pappret är bortplockat, bara bläcket finns kvar. */
 #root::before {
   content: "";                        /* ::before syns bara om den har content, även tomt */
   position: fixed;
@@ -118,7 +119,7 @@ img {
   aspect-ratio: 1;                    /* lika hög som bred: en rund mandala */
   z-index: 0;                         /* ovanför sektionernas bakgrundsfärg … */
   background-color: var(--secondary); /* mandalans färg */
-  opacity: 0.4;
+  opacity: 0.4;                       /* teckningen är tät och mörk, så lite svagare */
   mix-blend-mode: multiply;           /* … men BLANDAS med färgen under, så den syns på alla
                                          bakgrunder: mörkare rosa på rosa, ljusrosa på vitt */
   pointer-events: none;               /* går inte att klicka på – klicken går igenom */

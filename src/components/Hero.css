@@ -5,7 +5,7 @@
   align-items: center;
   text-align: left;
   gap: 32px;
-  padding: 40px 20px 48px;          /* mobil: mindre luft på sidorna */
+  padding: 40px 20px 16px;          /* mobil: mindre luft på sidorna och under bilden */
   background-color: var(--canvas);  /* vit, som resten av sidan (förut mauve) */
 }
 
@@ -79,7 +79,7 @@
 @media (min-width: 800px) {
   .hero {
     grid-template-columns: 1fr 1fr;
-    padding: 40px 32px 48px;
+    padding: 40px 32px 16px;        /* mindre luft under bilden */
   }
 
   #wrapper {

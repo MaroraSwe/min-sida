@@ -10,7 +10,7 @@ function Hero({ namn }) {
             <div className="hero-innehall">
                 {/* halsning() ger "God morgon", "Hej", "God kväll" eller "God natt" */}
                 <p className="hero-intro">{halsning()}, jag heter {namn}!</p>
-                <h2 id="hero-title">Jag lär mig att bygga webben.</h2>
+                <h2 id="hero-title">Jag bygger broar mellan människor, affärer och teknik.</h2>
                 <p className="hero-text">Välkommen till min portfolio</p>
                 <Link className="hero-knapp" to="/om-mig">
                  Läs Vidare

@@ -96,6 +96,6 @@ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 
 @media (min-width: 600px) {
   .projekt {
-    padding: 64px 32px 40px;
+    padding: 32px 32px 40px;        /* mindre luft ovanför "Mina projekt" (var 64px) */
   }
 }

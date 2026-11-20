@@ -1,7 +1,8 @@
 .header {
   text-align: center;
   padding: 20px 10px;
-  background-color: var(--canvas);
+  /* mjuk rosa toning bakom namnet som bleknar ut till vitt, i sidans färger */
+  background: linear-gradient(to bottom, var(--secondary-light) 0%, #F8F1F4 55%, var(--canvas) 100%);
 }
 
 .header h1 {
@@ -12,4 +13,4 @@
 .header p {
   font-size: 20px;
   margin: 10px 0;
-}
+}

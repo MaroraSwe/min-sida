@@ -1,38 +1,43 @@
-/* Samma stil som projektkorten – mobil först */
+/* "Senast på GitHub" – en mindre, lugnare del längst ner på startsidan. Mobil först. */
 .github {
-  padding: 40px 20px;
+  padding: 24px 20px 32px;
   text-align: left;
 }
 
 .github h2 {
-  margin: 0 0 32px;                      /* samma som "Mina projekt" */
-  font-size: 32px;
+  margin: 0 0 20px;
+  font-size: 24px;                       /* mindre än "Mina projekt" (32px) */
   text-align: center;
 }
 
 .github-lista {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));   /* lika många kort som får plats */
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;                      /* inga prickar */
 }
 
+/* Små kort i samma stil som projektkorten: varm vit med tunn kant */
 .github-kort {
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(46, 26, 38, 0.12);   /* samma skugga som projektkorten */
+  padding: 12px 14px;
+  border: 1px solid var(--secondary-light);
+  border-radius: 10px;
+  background-color: #FFFDFC;
 }
 
 .github-kort h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .github-kort p {
-  margin: 0 0 8px;
+  margin: 0 0 4px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6B5463;
 }
 
 .github-kort a {
@@ -40,18 +45,18 @@
 }
 
 .github-datum {
-  font-size: 14px;
-  opacity: 0.75;                         /* lite grå, så den syns mindre än texten */
+  font-size: 12px;
+  opacity: 0.85;
 }
 
 .github-sprak {
   display: inline-block;
-  margin-top: 8px;
-  padding: 4px 12px;
+  margin-top: 6px;
+  padding: 2px 10px;
   border-radius: 999px;
   background-color: var(--secondary-light);
   color: var(--plum);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -62,6 +67,6 @@
 
 @media (min-width: 600px) {
   .github {
-    padding: 64px 32px;
+    padding: 32px 32px 40px;
   }
 }

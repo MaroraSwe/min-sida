@@ -1,20 +1,27 @@
+/* Footer – mobil först: allt centrerat under varandra.
+   Större skärm: tack-texten till vänster, Kontakt till höger, copyright i mitten längst ner. */
 .footer {
   margin-top: auto;                 /* footern hamnar längst ner även på korta sidor */
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.5;
-  padding: 24px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 24px 20px 16px;
   background-color: var(--plum);
   color: var(--canvas);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
 }
 
-.footer-kontakt {
-  margin: 12px 0;
+.footer-message {
+  margin: 0;
+  font-size: 15px;
 }
 
 .footer-kontakt h2 {
   margin: 0 0 4px;
   font-size: 16px;
+  font-weight: 600;
   color: var(--canvas);             /* ljus rubrik på den mörka footern */
 }
 
@@ -22,27 +29,50 @@
   margin: 0;
 }
 
+/* Länkarna ser ut som i menyn: ingen linje, rosé vid hover */
 .footer-kontakt a {
   display: inline-block;
-  padding: 12px 4px;
+  padding: 4px 2px;                 /* lite större yta att klicka på */
   color: var(--canvas);
+  text-decoration: none;
 }
 
 .footer-kontakt a:hover {
   color: var(--cta);
 }
 
+.footer-kontakt a:focus-visible {
+  outline: 2px solid var(--cta);
+  outline-offset: 2px;
+}
+
+/* Copyright-raden: i mitten, med en tunn linje ovanför */
 .footer-bottom {
-  margin-top: 12px;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13px;
   opacity: 0.8;                     /* lite dämpad, så kontaktraden syns mest */
 }
 
-.footer-länk {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 8px 16px;
-  border-radius: 4px;
-  background-color: var(--cta);
-  color: var(--plum);
-  text-decoration: none;
+/* Större skärm: samma luft på sidorna som menyn (32px) */
+@media (min-width: 701px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;   /* två kolumner */
+    align-items: center;
+    padding: 28px 32px 16px;
+  }
+
+  .footer-message {
+    text-align: left;                 /* vänster */
+  }
+
+  .footer-kontakt {
+    text-align: right;                /* höger: "Kontakt" och länkarna under */
+  }
+
+  .footer-bottom {
+    grid-column: 1 / -1;              /* över båda kolumnerna, centrerad */
+    text-align: center;
+  }
 }

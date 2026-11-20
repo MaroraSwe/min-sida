@@ -38,6 +38,18 @@ function GitHubRepon() {
     hamta();
   }, []);
 
+  // Bara mina egna repon (inte forkar), utan de dolda, högst 6
+  const synligaRepon = repon
+    .filter((r) => !r.fork) // behåll bara mina egna, inte kopior (forkar)
+    .filter((r) => !DOLDA_REPON.includes(r.name)) // ! = "inte": hoppa över de dolda
+    .slice(0, 6); // högst 6 kort
+
+  // Finns det inget att visa (och inget fel)? Då visas inte delen alls.
+  // null = "rita ingenting". Delen dyker upp av sig själv när det finns fler repon.
+  if (!laddar && !fel && synligaRepon.length === 0) {
+    return null;
+  }
+
   return (
     <section className="github">
       <h2>Senast på GitHub</h2>
@@ -46,11 +58,7 @@ function GitHubRepon() {
       {fel && <p className="github-fel" role="alert">{fel}</p>}
 
       <ul className="github-lista">
-        {repon
-          .filter((r) => !r.fork) // behåll bara mina egna, inte kopior (forkar)
-          .filter((r) => !DOLDA_REPON.includes(r.name)) // ! = "inte": hoppa över de dolda
-          .slice(0, 6) // högst 6 kort
-          .map((r) => (
+        {synligaRepon.map((r) => (
             <li key={r.id} className="github-kort">
               <h3>
                 <a href={r.html_url} target="_blank" rel="noreferrer">

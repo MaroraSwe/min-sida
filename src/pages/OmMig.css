@@ -1,151 +1,228 @@
+/* Om mig – mobil först. Allt ligger under varandra, och på större skärm
+   (800px och bredare, längst ner) hamnar saker bredvid varandra. */
 .om-mig {
-  display: grid;
-  grid-template-columns: 1fr;   /* text till vänster, bild till höger */
-  align-items: center;              /* texten hamnar mitt för bilden */
-  gap: 32px;                        /* samma som på startsidan */
-  padding: 40px 20px 48px;          /* samma som på startsidan */
   text-align: left;
+  color: var(--plum);
   background-color: var(--canvas);
 }
 
-.om-mig-bild {
-  order: 0;                         /* flyttar bilden till högra kolumnen */
-  display: block;
-  justify-self: start;                /* bilden ligger mot högerkanten, som på startsidan */
-  width: 300px;                     /* samma storlek som bilden på startsidan */
-  height: 400px;
-  max-width: 100%;                  /* krymper på mobil i stället för att sticka ut */
-  object-fit: cover;                /* bilden blir inte utdragen när den krymper */
-  border-radius: 8px;
+/* Små ikoner ärver färgen från texten runt omkring (currentColor) */
+.om-mig .ikon {
+  flex: none;
+  fill: currentColor;
 }
 
-.om-mig h2 {
-  margin: 0 0 16px;                 /* samma rubrikstil som på startsidan */
-  font-size: 26px;
+/* ===== Toppen: rosa bakgrund, text och foto ===== */
+.om-mig-topp {
+  display: grid;
+  gap: 32px;
+  padding: 40px 20px;
+  background: linear-gradient(120deg, #FBF2F4, #F6E7EC);  /* mjuk rosa toning */
+}
+
+.om-mig-topp h2 {
+  margin: 0 0 16px;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
-.om-mig-text {
-  max-width: 55ch;                  /* lagom lång rad, lätt att läsa */
-  margin: 0 0 24px;
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-.om-mig h3 {
-  margin: 0 0 16px;
-  color: var(--plum);
+.om-mig-hej {
+  margin: 0 0 10px;
   font-size: 20px;
-  padding-top: 15px;
+  font-weight: 700;
 }
 
-.om-mig-lista {
-  display: flex;                    /* lägger etiketterna på en rad */
-  flex-wrap: wrap;                  /* på mobil hamnar de på flera rader */
-  gap: 12px;
-  padding: 0;
-  margin: 0;
-  list-style: none;                 /* tar bort pricken framför */
-}
-
-.om-mig-lista li {
-  padding: 8px 20px;
-  border-radius: 999px;             /* helt runda kanter */
-  background-color: var(--secondary-light);
-  color: var(--plum);
-  font-weight: 600;
-}
-
-/* På mobil hamnar texten under bilden */
-/* Mina styrkor och kursen: en egen rad under text och bild */
-.om-mig-styrkor {
-  grid-column: 1 / -1;              /* går över båda kolumnerna */
-  order: 3;                         /* hamnar alltid sist, efter text och bild */
-  padding-top: 32px;
-  border-top: 1px solid var(--secondary-light);   /* tunn linje ovanför */
-}
-
-.om-mig-styrkor h3 {
-  padding-top: 0;
-  margin: 0 0 20px;
-}
-
-/* Egenskaper och Kompetenser bredvid varandra */
-.styrkor-grupper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-bottom: 40px;              /* luft innan kursrubriken */
+.om-mig-text {
+  max-width: 46ch;                       /* lagom långa rader, lätta att läsa */
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #4F3A47;
 }
 
 .om-mig-knapp {
-  margin-bottom: 16px;
-  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 11px 22px;
   border: none;
-  border-radius: 6px;
-  background-color: var(--cta);
-  color: var(--plum);
+  border-radius: 999px;
+  background-color: var(--plum);
+  color: var(--canvas);
   font: inherit;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .om-mig-knapp:hover {
-  background-color: var(--plum);
-  color: var(--canvas);
+  background-color: #4A2C3E;             /* lite ljusare plommon */
 }
 
-/* Lite mindre etiketter med jämnt avstånd */
-.om-mig-styrkor .om-mig-lista {
-  gap: 14px 10px;                   /* 14px mellan raderna, 10px mellan etiketterna */
+.om-mig-knapp:focus-visible {
+  outline: 2px solid var(--plum);
+  outline-offset: 3px;
 }
 
-.om-mig-styrkor .om-mig-lista li {
-  padding: 6px 16px;
-  font-size: 15px;
+/* Pilen vänds upp och ner när texten är utfälld */
+.om-mig-knapp .ikon {
+  transition: transform 0.2s ease;
 }
 
-/* Mina styrkor – svävande etiketter */
-.styrkor-rubrik {
+.om-mig-knapp.oppen .ikon {
+  transform: rotate(180deg);
+}
+
+/* Fotot: bara rundade hörn och en mjuk skugga */
+.om-mig-bild {
+  justify-self: center;
+  width: 100%;
+  max-width: 290px;
+  height: auto;
+  aspect-ratio: 290 / 370;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(46, 26, 38, 0.14);
+}
+
+/* ===== Varje del under toppen ===== */
+.om-mig-del {
+  padding: 30px 20px;
+  border-top: 1px solid var(--secondary-light);
+}
+
+.om-mig h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--plum);
+}
+
+.om-mig h3 .ikon {
+  color: #8A6A7E;                        /* dämpad mauve */
+}
+
+/* ===== Mina styrkor ===== */
+.styrke-lista {
+  display: grid;
+  gap: 16px;
+}
+
+.styrke-kort {
+  padding: 18px;
+  border: 1px solid #F1E2E8;
+  border-radius: 14px;
+  background-color: #FBF4F6;
+}
+
+.styrke-ikon {
+  display: grid;
+  place-items: center;                   /* ikonen mitt i cirkeln */
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background-color: var(--canvas);
+  color: #B8707C;
+}
+
+.styrke-kort h4 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.styrke-kort p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #5E4856;
+}
+
+/* ===== Kompetenser ===== */
+.kompetens-grupper {
+  display: grid;
+  gap: 24px;
+}
+
+.kompetens-rubrik {
   margin: 0 0 12px;
-  font-size: 13px;
-  text-transform: uppercase;        /* små versaler som en underrubrik */
-  letter-spacing: 0.06em;
-  opacity: 0.7;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;             /* "Verktyg" blir "VERKTYG" */
+  color: #7A5F70;
 }
 
-.styrkor li {
-  animation: flyt 4s ease-in-out infinite;   /* guppar lugnt upp och ner, om och om igen */
+.piller {
+  display: flex;
+  flex-wrap: wrap;                       /* etiketterna radbryts när raden är full */
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-@keyframes flyt {
-  0%, 100% { transform: translateY(0); }     /* start och slut: vanlig plats */
-  50%      { transform: translateY(-3px); }  /* halvvägs: 3px högre upp */
+.piller li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border: 1px solid #F1E2E8;
+  border-radius: 999px;
+  background-color: #F8EEF1;
+  font-size: 14.5px;
+  font-weight: 600;
 }
 
-/* Besökare som har valt "minska rörelse" får stilla etiketter */
-@media (prefers-reduced-motion: reduce) {
-  .styrkor li {
-    animation: none;
-  }
+.piller .ikon {
+  color: #8A6A7E;
 }
 
-
-@media (min-width: 800px) {
-  .om-mig {
+/* ===== Mellanstor skärm: två styrkekort per rad ===== */
+@media (min-width: 600px) {
+  .styrke-lista {
     grid-template-columns: 1fr 1fr;
-   padding: 40px 32px 48px;
   }
+}
 
-  .om-mig-bild {
-   order: 2;
-    justify-self: end;
-  }
-
-  .styrkor-grupper {
-    grid-template-columns: 1fr 2fr;
+/* ===== Stor skärm ===== */
+@media (min-width: 800px) {
+  .om-mig-topp {
+    grid-template-columns: 1.2fr 1fr;   /* text lite bredare än fotot */
+    align-items: center;
     gap: 40px;
+    padding: 48px 40px 44px;
   }
-}
+
+  .om-mig-topp h2 {
+    font-size: 34px;
+  }
+
+  .om-mig-del {
+    padding: 30px 40px;
+  }
+
+  .styrke-lista {
+    grid-template-columns: repeat(4, 1fr);   /* alla fyra på en rad */
+  }
+
+  /* Tre grupper bredvid varandra, med en tunn linje emellan */
+  .kompetens-grupper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .kompetens-grupper > div {
+    padding: 0 28px;
+    border-left: 1px solid var(--secondary-light);
+  }
+
+  .kompetens-grupper > div:first-child {
+    padding-left: 0;
+    border-left: none;
+  }
+}

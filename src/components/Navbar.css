@@ -2,9 +2,9 @@
   display: flex;                    /* lägger logo och länkar på en rad */
   justify-content: space-between;        /* länkarna längst till vänster, knappen till höger */
   align-items: center;
-  padding: 12px 20px;
+  padding: 6px 16px;                /* lägre navbar (var 12px 20px) */
   background-color: var(--plum);
-  font-size: 18px;
+  font-size: 16px;                  /* lite mindre text (var 18px) */
   font-weight: 500;
   position: sticky;                 /* navbaren följer med när man scrollar */
   top: 0;                            /* navbaren fastnar längst upp */
@@ -51,13 +51,13 @@
   
 .hamburgare {
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 40px;                      /* fortfarande lätt att träffa med tummen */
+  height: 40px;
   border: none;
   border-radius: 8px;
   background-color: transparent;
   color: var(--canvas);
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1;
   cursor: pointer;
 }
@@ -88,7 +88,7 @@
 /* På större skärm: länkarna på en rad och ingen hamburgarknapp */
 @media (min-width: 701px) {
   .navbar {
-  padding: 16px 32px;
+    padding: 8px 32px;              /* lägre navbar (var 16px 32px) */
   }
 
 .hamburgare {
@@ -108,6 +108,6 @@
   }
 
   .lankar a {
-    padding: 10px 4px;            
+    padding: 6px 4px;               /* var 10px 4px */
   }
 }

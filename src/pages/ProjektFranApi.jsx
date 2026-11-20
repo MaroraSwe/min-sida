@@ -50,10 +50,11 @@ function ProjektFranApi() {
             key={p.id}
             id={p.id}
             titel={p.titel}
+            kategori={p.kategori}
             beskrivning={p.beskrivning}
             teknik={p.teknik}
             bild={bilder[p.bild]}
-            länk={p.lank}
+            typ={p.typ}
           />
         ))}
       </div>

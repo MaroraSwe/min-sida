@@ -6,7 +6,7 @@
   text-align: left;
   gap: 32px;
   padding: 40px 20px 48px;          /* mobil: mindre luft på sidorna */
-  background-color: var(--secondary);
+  background-color: var(--canvas);  /* vit, som resten av sidan (förut mauve) */
 }
 
 .hero-innehall {

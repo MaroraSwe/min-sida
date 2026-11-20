@@ -55,16 +55,24 @@ function ProjektDetalj() {
         </div>
       )}
 
-      <h3>Tekniker</h3>
-      <ul className="projekt-detalj-teknik">
-        {teknik.map((t) => (
-          <li key={t}>{t}</li>
-        ))}
-      </ul>
+      {/* Personliga projekt har inga tekniker – då hoppar vi över hela rubriken */}
+      {teknik.length > 0 && (
+        <>
+          <h3>Tekniker</h3>
+          <ul className="projekt-detalj-teknik">
+            {teknik.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        </>
+      )}
 
-      <a className="hero-knapp" href={lank} target="_blank" rel="noreferrer">
-        Se koden på GitHub
-      </a>
+      {/* Bara kodprojekt har en GitHub-länk */}
+      {lank && (
+        <a className="hero-knapp" href={lank} target="_blank" rel="noreferrer">
+          Se koden på GitHub
+        </a>
+      )}
     </section>
   );
 }

@@ -1,125 +1,112 @@
+/* Projektkorten – byggda som exemplet:
+   en ljus kortyta med tunn kant, bilden överst och en rad med länk och tekniker längst ner.
+   Alla kort är likadana. Färgen kommer från bilderna. */
 .projekt-kort {
-  position: relative;                    /* React-etiketten placeras i förhållande till kortet */
-  background-color: #ffffff;
-  border-radius: 8px;
-   border: 1px solid var(--secondary-light);   /* tunn ram runt kortet */
-  overflow: hidden;                      /* bilden får runda hörn upptill */
-  text-align: left;
-  box-shadow: 0 2px 8px rgba(46, 26, 38, 0.12);
   display: flex;
   flex-direction: column;                /* bild och info under varandra */
+  background-color: #FFFDFC;             /* varm, nästan vit */
+  border: 1px solid var(--secondary-light);
+  border-radius: 10px;
+  overflow: hidden;                      /* bilden får runda hörn upptill */
+  text-align: left;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.projekt-kort:hover {
+  transform: translateY(-4px);                    /* kortet lyfts lite uppåt */
+  box-shadow: 0 8px 18px rgba(46, 26, 38, 0.10);  /* och får en mjuk skugga */
+}
+
+/* Bilden fyller hela bredden. aspect-ratio 16 / 9 = alla bilder lika höga,
+   hur brett kortet än är (16 bred på 9 hög, som en tv-bild) */
 .projekt-bild {
-  width: 100%;
-  height: 160px;
   display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;                     /* bilden fyller rutan utan att bli utdragen */
+  background-color: var(--secondary-light);
 }
 
 .projekt-info {
-  padding: 20px;
   flex: 1;                               /* info-delen fyller resten av kortet */
   display: flex;
   flex-direction: column;
+  padding: 14px 16px 12px;
+}
+
+/* "01 / WEBBUTVECKLING" – liten text med versaler */
+.projekt-kategori {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;                /* lite luft mellan bokstäverna */
+  text-transform: uppercase;             /* CSS gör om texten till VERSALER */
+  color: #7A5F70;                        /* dämpad plommon */
 }
 
 .projekt-info h3 {
-  margin: 0 0 6px;
-  font-size: 18px;                       /* lite mindre rubrik */
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
   color: var(--plum);
 }
 
-.projekt-info p {
-  margin: 0 0 14px;                      /* luft mellan texten och etiketterna */
-  font-size: 15px;                       /* lite mindre än sidans vanliga text */
+.projekt-beskrivning {
+  margin: 0 0 14px;
+  font-size: 14px;
   line-height: 1.5;                      /* bekvämt radavstånd */
+  color: #6B5463;                        /* lite ljusare än rubriken */
 }
 
-/* Teknik-etiketterna, t.ex. "React" – en rad som radbryts vid behov */
-.projekt-taggar {
+/* Raden längst ner, med en tunn linje ovanför */
+.projekt-fot {
+  margin-top: auto;                      /* skjuter raden längst ner i kortet */
+  padding-top: 10px;
+  border-top: 1px solid var(--secondary-light);
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;        /* länken till vänster, teknikerna till höger */
+  gap: 6px 12px;
+}
+
+.projekt-lank {
+  display: inline-flex;
+  align-items: center;
   gap: 6px;
-  margin: 0 0 16px;
-}
-
-.projekt-info .projekt-teknik {
-  margin: 0;
-  padding: 1px 8px;
-  border-radius: 999px;             /* helt runda kanter */
-  background-color: var(--secondary-light);
+  padding: 4px 0;                        /* lite större yta att klicka på */
   color: var(--plum);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-  line-height: 1.6;                 /* lägre etikett */
+  text-decoration: none;
 }
 
-.projekt-knapp {
-  display: inline-block;
-  margin-top: auto;                      /* skjuter knappen längst ner */
-  padding: 9px 18px;                     /* mindre än hero-knappen, men lätt att träffa */
-  border-radius: 6px;
+.projekt-lank:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.projekt-lank:focus-visible {
+  outline: 2px solid var(--plum);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Den lilla rosa rutan med pilen */
+.projekt-ikon {
+  display: inline-grid;
+  place-items: center;                   /* pilen hamnar mitt i rutan */
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
   background-color: var(--cta);
   color: var(--plum);
-  font-size: 15px;                       /* samma storlek som beskrivningen */
-  line-height: 1.4;                      /* samma höjd på mobil och dator */
-  font-weight: 600;
-  text-decoration: none;                 /* tar bort understrykningen */
-  align-self: center;                    /* knappen hamnar i mitten av kortet */
+  font-size: 11px;
+  line-height: 1;
 }
 
-/* Raden längst ner med "Läs mer" och "Se projektet" */
-.projekt-knappar {
-  margin-top: auto;                      /* skjuter raden längst ner i kortet */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 8px 12px;                         /* 8px mellan raderna, 12px mellan knapparna */
-}
-
-.projekt-knappar .projekt-knapp {
-  margin-top: 0;
-}
-
-.projekt-knapp:hover {
-  background-color: var(--plum);
-  color: var(--canvas);
-}
-
-/* Sekundär knapp: bara en ram, ingen fyllning */
-.projekt-knapp.sekundar {
-  background-color: transparent;
-  border: 2px solid var(--plum);
-  padding: 7px 16px;                     /* 2px mindre än vanligt – ramen tar de 2px */
-}
-
-.projekt-knapp.sekundar:hover {
-  background-color: var(--plum);
-  color: var(--canvas);
-}
-
-/* "Byggd med React" – en liten etikett uppe till vänster på bilden */
-.projekt-react {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 2px 10px;
-  border-radius: 999px;
-  background-color: var(--plum);
-  color: var(--canvas);
+.projekt-teknik-rad {
   font-size: 12px;
-  font-weight: 600;
+  color: #7A5F70;
 }
-
-.projekt-knapp:focus-visible {
-  outline: 3px solid var(--plum);
-  outline-offset: 4px;
-}
-
-.projekt-kort:hover {
-  transform: translateY(-8px);                    /* kortet lyfts 4px uppåt */
-  box-shadow: 0 8px 16px rgba(46, 26, 38, 0.18);  /* skuggan blir större */
-}

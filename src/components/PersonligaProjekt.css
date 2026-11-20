@@ -1,0 +1,24 @@
+/* "Personliga projekt" längst ner på sidan för Min portfoliosida */
+.personliga-projekt {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--secondary-light);  /* en tunn linje skiljer av */
+}
+
+.personliga-intro {
+  margin: 0 0 16px;
+  font-size: 15px;
+}
+
+/* Två kort bredvid varandra på dator, under varandra på mobil */
+.personliga-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Projektsidans rubrikstil får inte ta över rubrikerna inuti korten */
+.personliga-projekt .projekt-info h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}

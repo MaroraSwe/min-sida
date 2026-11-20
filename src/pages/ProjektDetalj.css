@@ -8,9 +8,20 @@
   text-align: left;
 }
 
+/* Projektets rubrik: lugn storlek, så att ögat går vidare till texten.
+   clamp(minst, helst, högst): 24px på mobil, växer lite, aldrig över 30px (förut upp till 45px) */
 .projekt-detalj h2 {
-  margin: 16px 0;
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin: 16px 0 12px;
+  font-size: clamp(24px, 4vw, 30px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Brödtexten: lite större och luftigare – lätt att läsa */
+.projekt-detalj > p {
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 62ch;                  /* ch = en teckenbredd: lagom långa rader, ca 60 tecken */
 }
 
 .projekt-detalj-tillbaka {
@@ -22,15 +33,17 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height: 360px;
+  aspect-ratio: 16 / 9;             /* samma form som bilden på kortet */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 16px;
+  background-color: var(--secondary-light); /* syns bakom bildens genomskinliga delar */
 }
 
 .projekt-detalj h3 {
   margin: 24px 0 12px;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .projekt-detalj-teknik {

@@ -1,7 +1,10 @@
 // Räknar hur många av mina projekt som använder varje teknik.
 // Uppdateras av sig själv när projekt.json ändras.
 import "./Statistik.css";
-import projektLista from "../data/projekt.json";
+import allaProjekt from "../data/projekt.json";
+
+// Bara kodprojekten räknas – de personliga (mandala, bakning) har inga tekniker
+const projektLista = allaProjekt.filter((p) => p.typ !== "personlig");
 
 // .reduce() går igenom alla projekt och bygger upp ETT svar – här ett objekt:
 // { React: 3, CSS: 1, Git: 1, useState: 2, Formspree: 1 }

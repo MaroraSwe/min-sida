@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 :root {
   /* ===== Färgtema – ändra här så ändras hela sidan ===== */
-  --canvas: #FAF7F8;           /* Ljus rosavit – bakgrund */
+  --canvas: #FFFFFF;           /* Vit – bakgrund (förut ljus rosavit #FAF7F8) */
   --secondary: #C9AFBF;        /* Dämpad rosa-mauve – färgade ytor */
   --secondary-light: #EEE3E9;  /* ljusare rosa-mauve – sektioner, etiketter */
   --plum: #2E1A26;             /* Djup plommon – text, rubriker, meny */
@@ -101,41 +101,4 @@ code {
 img {
   max-width: 100%;
   height: auto;
-}
-
-/* ===== Mandalan i bakgrunden =====
-   EN stor mandala mitt på skärmen, bakom allt innehåll på alla sidor.
-   position: fixed = den står still mitt på skärmen medan sidan scrollar förbi.
-   Bilden är en SCHABLON (mask): den bestämmer formen, background-color bestämmer färgen.
-   mandala.webp är din egen tuschteckning: pappret är bortplockat, bara bläcket finns kvar. */
-#root::before {
-  content: "";                        /* ::before syns bara om den har content, även tomt */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);   /* flyttar den halva sin storlek = exakt i mitten */
-  width: min(1126px, 100%);           /* lika bred som sidan (#root är 1126px), aldrig bredare än skärmen.
-                                         Är skärmen lägre än mandalan klipps toppen och botten – det är okej */
-  aspect-ratio: 1;                    /* lika hög som bred: en rund mandala */
-  z-index: 0;                         /* ovanför sektionernas bakgrundsfärg … */
-  background-color: var(--secondary); /* mandalans färg */
-  opacity: 0.4;                       /* teckningen är tät och mörk, så lite svagare */
-  mix-blend-mode: multiply;           /* … men BLANDAS med färgen under, så den syns på alla
-                                         bakgrunder: mörkare rosa på rosa, ljusrosa på vitt */
-  pointer-events: none;               /* går inte att klicka på – klicken går igenom */
-  -webkit-mask: url("./assets/mandala.webp") center / contain no-repeat;
-  mask: url("./assets/mandala.webp") center / contain no-repeat;
-}
-
-/* Innehållet (text, bilder, kort, knappar) läggs OVANPÅ mandalan med z-index: 1.
-   :where() gör regeln så svag som möjligt, så att egna position-regler (t.ex. absolute) vinner. */
-:where(#root > :not(nav, footer) > *) {
-  position: relative;
-  z-index: 1;
-}
-
-/* Footern ligger helt ovanpå mandalan */
-footer {
-  position: relative;
-  z-index: 1;
 }

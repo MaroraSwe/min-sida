@@ -1,6 +1,6 @@
 .projekt {
    padding: 40px 20px;               /* mobil först */
-   background-color: var(--secondary-light);
+   background-color: var(--canvas);   /* vit, som resten av sidan (förut ljusrosa) */
    scroll-margin-top: 60px;
  }
 

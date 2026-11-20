@@ -3,10 +3,10 @@
     "id": 1,
     "titel": "Min portfoliosida",
     "kategori": "Webbutveckling",
-    "beskrivning": "Sidan du tittar på nu. Byggd med React och CSS.",
+    "beskrivning": "Sidan du tittar på nu. Byggd med React, React Router och CSS, med en egen server i Node.js och Express. Publicerad på Vercel.",
     "bild": "portfolio.svg",
     "lank": "https://github.com/MaroraSwe/min-sida",
-    "teknik": ["React", "CSS", "Git"]
+    "teknik": ["React", "JavaScript", "CSS", "React Router", "Vite", "Node.js", "Express", "Formspree", "Git", "Vercel"]
   },
   {
     "id": 2,

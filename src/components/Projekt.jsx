@@ -8,11 +8,13 @@ import { antalProjekt } from "../utils/text";
 
 // Filterknapparna skapas av två loopar: gå igenom varje projekt,
 // och varje teknik i projektet. Finns tekniken inte i listan än – lägg till den.
-// Lägger du till en ny teknik i projekt.json dyker knappen upp av sig själv.
+// Bara de 3 FÖRSTA teknikerna i varje projekt blir knappar (de viktigaste –
+// samma som syns på kortet). Annars blir det för många knappar.
+// Lägger du till en ny teknik först i listan i projekt.json dyker knappen upp av sig själv.
 const filterLista = ["Alla"];
 
 for (const projekt of projektLista) {
-  for (const teknik of projekt.teknik) {
+  for (const teknik of projekt.teknik.slice(0, 3)) {
     if (!filterLista.includes(teknik)) {
       filterLista.push(teknik);
     }

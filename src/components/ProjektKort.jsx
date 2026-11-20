@@ -10,6 +10,13 @@ function ProjektKort({ id, titel, kategori, beskrivning, teknik, bild, typ }) {
   // padStart fyller på med nollor framifrån tills texten är 2 tecken lång: 1 blir "01"
   const nummer = String(id).padStart(2, "0");
 
+  // Kortet visar högst 3 tekniker, så att raden inte blir för lång.
+  // Har projektet fler står det t.ex. "+10" – alla syns på projektets egen sida.
+  const MAX_TEKNIKER = 3;
+  const extra = teknik.length - MAX_TEKNIKER;
+  const teknikText =
+    teknik.slice(0, MAX_TEKNIKER).join(" · ") + (extra > 0 ? ` +${extra}` : "");
+
   return (
     <article className="projekt-kort">
       <img className="projekt-bild" src={bild} alt={titel} />
@@ -29,7 +36,7 @@ function ProjektKort({ id, titel, kategori, beskrivning, teknik, bild, typ }) {
             <span className="projekt-ikon" aria-hidden="true">↗</span>
           </Link>
           <span className="projekt-teknik-rad">
-            {personlig ? "Personligt" : teknik.join(" · ")}
+            {personlig ? "Personligt" : teknikText}
           </span>
         </div>
       </div>

@@ -18,7 +18,7 @@
 
 .om-mig-topp h2 {
   margin: 0 0 16px;
-  font-size: clamp(1.5rem, 4vw, 2rem); /* samma som rubriken på startsidan */
+  font-size: clamp(26px, 4vw, 32px);      /* sidrubrik: samma storlek på alla sidor */
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;

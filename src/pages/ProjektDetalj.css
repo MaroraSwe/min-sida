@@ -12,8 +12,8 @@
    clamp(minst, helst, högst): 24px på mobil, växer lite, aldrig över 30px (förut upp till 45px) */
 .projekt-detalj h2 {
   margin: 16px 0 12px;
-  font-size: clamp(24px, 4vw, 30px);
-  font-weight: 600;
+  font-size: clamp(26px, 4vw, 32px);      /* sidrubrik: samma storlek på alla sidor */
+  font-weight: 700;
   line-height: 1.25;
 }
 

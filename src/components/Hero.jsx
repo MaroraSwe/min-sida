@@ -13,7 +13,7 @@ function Hero({ namn }) {
                 <h2 id="hero-title">Jag bygger broar mellan människor, affärer och teknik.</h2>
                 <p className="hero-text">Välkommen till min portfolio</p>
                 <Link className="hero-knapp" to="/om-mig">
-                 Läs Vidare
+                 Läs vidare
                 </Link>
             </div>
 
@@ -21,7 +21,7 @@ function Hero({ namn }) {
             <img
                 className="hero-bild"
                 src={herobild}
-                alt="Hero Bild"
+                alt="Porträtt av Meenakshi Arora."
             />
 
             </div>

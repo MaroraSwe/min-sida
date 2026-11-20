@@ -9,7 +9,7 @@
 
 .kontakt-info h2 {
   margin: 0 0 16px;                 /* samma rubrikstil som Hem och Om mig */
-  font-size: 26px;
+  font-size: clamp(26px, 4vw, 32px);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;

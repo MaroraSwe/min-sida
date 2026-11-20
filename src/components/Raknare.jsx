@@ -9,7 +9,7 @@ function Raknare() {
     <div className="Raknare">
       <div className="raknare-rad">
         <button className="raknare-rund" onClick={() => antal > 0 && setAntal(antal - 1)}>-</button>
-        <span className="raknare-siffra" style={{ color: antal > 0 ? 'green' : 'red' }}>{antal}</span>
+        <span className="raknare-siffra" style={{ color: antal > 0 ? '#2e7d32' : '#b3261e' }}>{antal}</span>
         <button className="raknare-rund" onClick={() => setAntal(antal + 1)}>+</button>
       </div>
 

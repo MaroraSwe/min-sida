@@ -67,7 +67,7 @@ export default function Kontakt() {
       {/* Vänster kolumn: text */}
       <div className="kontakt-info">
         <h2>Kontakta mig</h2>
-        <p>Har du en fråga? Skriv ett meddelande</p>
+        <p>Har du en fråga? Skriv ett meddelande.</p>
         <img className="kontakt-bild" src={kontaktBild} alt="" />
       </div>
 

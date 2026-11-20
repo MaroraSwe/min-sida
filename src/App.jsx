@@ -24,7 +24,7 @@ function App() {
       <Navbar
         lankar={[
           { namn: "Hem", till: "/" },
-          { namn: "Om Mig", till: "/om-mig" },
+          { namn: "Om mig", till: "/om-mig" },
           { namn: "Projekt", till: "/projekt" },
           { namn: "Kontakt", till: "/kontakt" },
         ]}

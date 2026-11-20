@@ -212,12 +212,12 @@
 
   /* Tre grupper bredvid varandra, med en tunn linje emellan */
   .kompetens-grupper {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1.15fr 1fr;   /* mittenkolumnen lite bredare: där finns den längsta etiketten */
     gap: 0;
   }
 
   .kompetens-grupper > div {
-    padding: 0 28px;
+    padding: 0 22px;
     border-left: 1px solid var(--secondary-light);
   }
 

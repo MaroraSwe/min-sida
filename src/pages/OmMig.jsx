@@ -8,14 +8,14 @@ import Intressen from "../components/Intressen";
 // Skriv bara sådant som är sant och som du kan berätta mer om på en intervju.
 const styrkor = [
   {
-    titel: "Samordnare",
+    titel: "Samordnare, Stöd, Administration",
     ikon: "calendar-check-outline",
     text: "Projektkoordinering, affärsstöd, verksamhetsstöd och kundframgång inom IT och finans.",
   },
   {
-    titel: "Det bästa av två världar",
+    titel: "Erfarenhet inom IT och finans",
     ikon: "swap-horizontal",
-    text: "Jag har erfarenhet av både finans och IT, och tar med mig det bästa från båda.",
+    text: "Det bästa av två världar – jag tar med mig kunskap från både IT och finans in i mitt arbete.",
   },
   {
     titel: "Lagspelare",
@@ -25,7 +25,7 @@ const styrkor = [
   {
     titel: "Tre språk",
     ikon: "translate",
-    text: "Jag arbetar på engelska, hindi och svenska.",
+    text: "Jag arbetar på Engelska, Hindi och Svenska.",
   },
 ];
 
@@ -34,11 +34,15 @@ const kompetenser = [
   {
     rubrik: "Webbutveckling",
     lista: [
-      ["React med hooks", "atom"],
+      ["React", "atom"],
       ["JavaScript", "code-tags"],
-      ["CSS", "palette-swatch-outline"],
       ["REST API", "api"],
+      ["useState", "variable"],
+      ["useEffect", "lightning-bolt-outline"],
+      ["CSS", "palette-swatch-outline"],
       ["Git", "source-branch"],
+      ["Formspree", "send-outline"],
+      ["localStorage", "content-save-outline"],
     ],
   },
   {
@@ -49,6 +53,8 @@ const kompetenser = [
       ["Kundframgång", "trending-up"],
       ["Utbildning", "school-outline"],
       ["Administration", "folder-open-outline"],
+      ["Säljstöd", "point-of-sale"],
+      ["Kund- och medarbetarintroduktion", "account-plus-outline"],
     ],
   },
   {

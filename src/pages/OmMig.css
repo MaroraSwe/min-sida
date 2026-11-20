@@ -1,228 +1,174 @@
-/* Om mig – mobil först. Allt ligger under varandra, och på större skärm
-   (800px och bredare, längst ner) hamnar saker bredvid varandra. */
+/* Om mig – samma stil som resten av sidan:
+   vit bakgrund, rosa knapp som på startsidan, centrerade rubriker som "Mina projekt",
+   kort som projektkorten och etiketter som teknikerna på projektsidorna. Mobil först. */
 .om-mig {
   text-align: left;
   color: var(--plum);
   background-color: var(--canvas);
 }
 
-/* Små ikoner ärver färgen från texten runt omkring (currentColor) */
-.om-mig .ikon {
-  flex: none;
-  fill: currentColor;
-}
-
-/* ===== Toppen: rosa bakgrund, text och foto ===== */
+/* ===== Toppen: samma upplägg som startsidans hero ===== */
 .om-mig-topp {
   display: grid;
+  grid-template-columns: 1fr;          /* mobil: fotot under texten */
+  align-items: center;
   gap: 32px;
-  padding: 40px 20px;
-  background: linear-gradient(120deg, #FBF2F4, #F6E7EC);  /* mjuk rosa toning */
+  padding: 40px 20px 48px;
 }
 
 .om-mig-topp h2 {
   margin: 0 0 16px;
-  font-size: 32px;
+  font-size: clamp(1.5rem, 4vw, 2rem); /* samma som rubriken på startsidan */
   font-weight: 700;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 .om-mig-hej {
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 700;
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .om-mig-text {
-  max-width: 46ch;                       /* lagom långa rader, lätta att läsa */
-  margin: 0 0 14px;
-  font-size: 16px;
-  line-height: 1.65;
-  color: #4F3A47;
+  max-width: 55ch;                     /* lagom långa rader, som på startsidan */
+  margin: 0 0 16px;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
+/* Knappen ser ut som "Läs Vidare" på startsidan */
 .om-mig-knapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  padding: 11px 22px;
+  margin-top: 16px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 999px;
-  background-color: var(--plum);
-  color: var(--canvas);
+  border-radius: 6px;
+  background-color: var(--cta);
+  color: var(--plum);
   font: inherit;
-  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .om-mig-knapp:hover {
-  background-color: #4A2C3E;             /* lite ljusare plommon */
+  background-color: var(--plum);
+  color: var(--canvas);
 }
 
 .om-mig-knapp:focus-visible {
   outline: 2px solid var(--plum);
-  outline-offset: 3px;
+  outline-offset: 4px;
 }
 
-/* Pilen vänds upp och ner när texten är utfälld */
-.om-mig-knapp .ikon {
-  transition: transform 0.2s ease;
-}
-
-.om-mig-knapp.oppen .ikon {
-  transform: rotate(180deg);
-}
-
-/* Fotot: bara rundade hörn och en mjuk skugga */
+/* Fotot: samma storlek och hörn som på startsidan */
 .om-mig-bild {
-  justify-self: center;
-  width: 100%;
-  max-width: 290px;
-  height: auto;
-  aspect-ratio: 290 / 370;
+  justify-self: start;
+  display: block;
+  width: 300px;
+  height: 400px;
+  max-width: 100%;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(46, 26, 38, 0.14);
+  border-radius: 8px;
 }
 
-/* ===== Varje del under toppen ===== */
+/* ===== Delarna under toppen ===== */
 .om-mig-del {
-  padding: 30px 20px;
-  border-top: 1px solid var(--secondary-light);
+  padding: 40px 20px;
 }
 
-.om-mig h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 18px;
-  font-size: 21px;
-  font-weight: 700;
-  color: var(--plum);
+/* Rubrikerna ser ut som "Mina projekt" och "GitHub" */
+.om-mig-del > h2 {
+  margin: 0 0 32px;
+  font-size: 32px;
+  text-align: center;
 }
 
-.om-mig h3 .ikon {
-  color: #8A6A7E;                        /* dämpad mauve */
-}
-
-/* ===== Mina styrkor ===== */
+/* ===== Mina styrkor: kort som projektkorten ===== */
 .styrke-lista {
   display: grid;
-  gap: 16px;
-}
-
-.styrke-kort {
-  padding: 18px;
-  border: 1px solid #F1E2E8;
-  border-radius: 14px;
-  background-color: #FBF4F6;
-}
-
-.styrke-ikon {
-  display: grid;
-  place-items: center;                   /* ikonen mitt i cirkeln */
-  width: 42px;
-  height: 42px;
-  margin-bottom: 12px;
-  border-radius: 50%;
-  background-color: var(--canvas);
-  color: #B8707C;
-}
-
-.styrke-kort h4 {
-  margin: 0 0 6px;
-  font-size: 17px;
-}
-
-.styrke-kort p {
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: #5E4856;
-}
-
-/* ===== Kompetenser ===== */
-.kompetens-grupper {
-  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
 }
 
-.kompetens-rubrik {
-  margin: 0 0 12px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;             /* "Verktyg" blir "VERKTYG" */
-  color: #7A5F70;
+.styrke-kort {
+  padding: 16px;
+  border: 1px solid var(--secondary-light);
+  border-radius: 10px;
+  background-color: #FFFDFC;           /* samma varma vita som projektkorten */
 }
 
-.piller {
-  display: flex;
-  flex-wrap: wrap;                       /* etiketterna radbryts när raden är full */
-  gap: 9px;
+.styrke-kort h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.styrke-kort p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6B5463;                      /* samma dämpade plommon som på projektkorten */
+}
+
+/* ===== Kompetenser: ett kort per grupp, som Mina styrkor ===== */
+.kompetens-grupper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.kompetens-kort {
+  padding: 16px;
+  border: 1px solid var(--secondary-light);
+  border-radius: 10px;
+  background-color: #FFFDFC;
+}
+
+.kompetens-kort h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* Vanlig text i en lista – inte knappar. En liten rosa prick före varje rad. */
+.kompetens-lista {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.piller li {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 14px;
-  border: 1px solid #F1E2E8;
-  border-radius: 999px;
-  background-color: #F8EEF1;
-  font-size: 14.5px;
-  font-weight: 600;
+.kompetens-lista li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #6B5463;
 }
 
-.piller .ikon {
-  color: #8A6A7E;
+.kompetens-lista li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;                           /* mitt på textraden */
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--cta);
 }
 
-/* ===== Mellanstor skärm: två styrkekort per rad ===== */
+/* ===== Större skärm ===== */
 @media (min-width: 600px) {
-  .styrke-lista {
-    grid-template-columns: 1fr 1fr;
+  .om-mig-del {
+    padding: 64px 32px 40px;
   }
 }
 
-/* ===== Stor skärm ===== */
 @media (min-width: 800px) {
   .om-mig-topp {
-    grid-template-columns: 1.2fr 1fr;   /* text lite bredare än fotot */
-    align-items: center;
-    gap: 40px;
-    padding: 48px 40px 44px;
+    grid-template-columns: 1fr 1fr;    /* text till vänster, foto till höger */
+    padding: 40px 32px 48px;
   }
 
-  .om-mig-topp h2 {
-    font-size: 34px;
-  }
-
-  .om-mig-del {
-    padding: 30px 40px;
-  }
-
-  .styrke-lista {
-    grid-template-columns: repeat(4, 1fr);   /* alla fyra på en rad */
-  }
-
-  /* Tre grupper bredvid varandra, med en tunn linje emellan */
-  .kompetens-grupper {
-    grid-template-columns: 1fr 1.15fr 1fr;   /* mittenkolumnen lite bredare: där finns den längsta etiketten */
-    gap: 0;
-  }
-
-  .kompetens-grupper > div {
-    padding: 0 22px;
-    border-left: 1px solid var(--secondary-light);
-  }
-
-  .kompetens-grupper > div:first-child {
-    padding-left: 0;
-    border-left: none;
+  .om-mig-bild {
+    justify-self: end;                 /* fotot mot högerkanten, som på startsidan */
   }
 }

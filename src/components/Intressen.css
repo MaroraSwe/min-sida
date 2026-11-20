@@ -1,132 +1,78 @@
-/* "Utanför koden" på Om mig. Korten liknar projektkorten. Mobil först. */
+/* "Utanför koden" – korten är byggda precis som projektkorten (ProjektKort.css). */
 .intressen-intro {
-  margin: -8px 0 20px;
-  font-size: 15px;
-  color: #6B5463;                        /* dämpad plommon */
+  max-width: 60ch;
+  margin: -16px auto 32px;              /* under den centrerade rubriken */
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  color: #6B5463;
 }
 
+/* Lika breda kort som på projektsidan, centrerade */
 .intressen-lista {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 340px));
+  justify-content: center;
   gap: 24px;
 }
 
-/* Kortet: vit yta med tunn kant. Bilden ligger lite inskjuten, med egna runda hörn. */
 .hobby-kort {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  border: 1px solid #EFE3E8;
-  border-radius: 16px;
-  background-color: #FFFFFF;
-}
-
-.hobby-bildyta {
-  position: relative;                    /* etiketten placeras i förhållande till bilden */
+  border: 1px solid var(--secondary-light);
+  border-radius: 10px;
+  background-color: #FFFDFC;
+  overflow: hidden;                      /* bilden får runda hörn upptill */
 }
 
 .hobby-bild {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;                     /* fyller rutan utan att bli utdragen */
-  border-radius: 12px;
+  aspect-ratio: 16 / 9;                  /* samma form som projektbilderna */
+  object-fit: cover;
 }
 
-/* Mandalan ska synas hel: contain = hela bilden får plats, inget klipps bort */
-.hobby-bildyta-hog .hobby-bild {
-  aspect-ratio: 1 / 1;
+/* Mandalan: contain = hela bilden syns, på vit botten */
+.hobby-bild.hel {
   object-fit: contain;
   background-color: #FFFFFF;
 }
 
-/* Den lilla vita etiketten uppe till vänster på bilden */
-.hobby-etikett {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 5px rgba(46, 26, 38, 0.14);
+.hobby-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 12px;
+}
+
+.hobby-kategori {
+  margin: 0 0 6px;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #7A5F70;
 }
 
-.hobby-sma {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.hobby-sma img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.hobby-info {
-  flex: 1;                               /* fyller resten av kortet */
-  display: flex;
-  flex-direction: column;
-  padding: 16px 10px 6px;
-}
-
-.hobby-kategori {
-  margin: 0 0 8px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #A55262;                        /* rosé, mörk nog att läsa (kontrast 5:1) */
-}
-
-.hobby-info h4 {
-  margin: 0 0 8px;
-  font-size: 20px;
-  font-weight: 700;
+.hobby-info h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .hobby-text {
-  margin: 0 0 16px;
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: #5E4856;
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6B5463;
 }
 
-/* Taggarna längst ner, med en tunn linje ovanför */
+/* Raden längst ner med en tunn linje, som på projektkorten */
 .hobby-taggar {
-  margin-top: auto;                      /* skjuter raden längst ner i kortet */
-  padding-top: 12px;
-  border-top: 1px solid #F1E6EA;
-  font-size: 12.5px;
-  color: #7E6674;
-}
-
-.intressen-slut {
-  margin: 24px 0 0;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #7E6674;
-}
-
-/* Stor skärm: korten bredvid varandra */
-@media (min-width: 800px) {
-  .intressen-lista {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* Mandalabilden blir lika hög som brownies + de små bilderna i kortet bredvid */
-  .hobby-bildyta-hog .hobby-bild {
-    aspect-ratio: 488 / 448;
-  }
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--secondary-light);
+  font-size: 12px;
+  color: #7A5F70;
 }

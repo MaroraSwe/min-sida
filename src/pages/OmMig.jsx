@@ -1,7 +1,6 @@
 import "./OmMig.css";
 import Self from "../assets/Self.jpg";
 import { useState } from "react";
-import Ikon from "../components/Ikon";
 import Intressen from "../components/Intressen";
 
 // Mina styrkor: en kort mening som visar VARFÖR – inte bara ett ord.
@@ -29,7 +28,7 @@ const styrkor = [
   },
 ];
 
-// Kompetenser i tre korta grupper. Varje rad: [namn, ikon]
+// Kompetenser i fyra grupper. Varje rad: [namn, ikon] (ikonen används inte just nu)
 const kompetenser = [
   {
     rubrik: "Webbutveckling",
@@ -48,6 +47,8 @@ const kompetenser = [
   {
     rubrik: "Verksamhet",
     lista: [
+      ["Projektkoordinering", "clipboard-text-outline"],
+      ["Affärsstöd", "briefcase-outline"],
       ["Verksamhetsstöd", "lifebuoy"],
       ["Verksamhetsdrift", "cog-outline"],
       ["Kundframgång", "trending-up"],
@@ -60,12 +61,21 @@ const kompetenser = [
   {
     rubrik: "Verktyg",
     lista: [
-      ["Office 365", "file-document-outline"],
+      ["Microsoft 365", "file-document-outline"],
       ["Jira", "view-dashboard-outline"],
       ["Confluence", "book-open-outline"],
       ["SharePoint", "share-variant-outline"],
       ["Power BI", "chart-bar"],
       ["Slack", "slack"],
+    ],
+  },
+  {
+    rubrik: "Egenskaper",
+    lista: [
+      ["Inspiratör", "lightbulb-outline"],
+      ["Ledare", "account-group-outline"],
+      ["Samordnare", "calendar-check-outline"],
+      ["Lagspelare", "handshake-outline"],
     ],
   },
 ];
@@ -109,7 +119,6 @@ function OmMig() {
             aria-expanded={visas}
           >
             {visas ? "Visa mindre" : "Läs mer om mig"}
-            <Ikon namn="chevron-down" />
           </button>
         </div>
 
@@ -122,39 +131,27 @@ function OmMig() {
 
       {/* Mina styrkor: fyra kort */}
       <div className="om-mig-del">
-        <h3>
-          <Ikon namn="medal-outline" storlek={24} />
-          Mina styrkor
-        </h3>
+        <h2>Mina styrkor</h2>
         <div className="styrke-lista">
           {styrkor.map((s) => (
             <article className="styrke-kort" key={s.titel}>
-              <span className="styrke-ikon">
-                <Ikon namn={s.ikon} storlek={22} />
-              </span>
-              <h4>{s.titel}</h4>
+              <h3>{s.titel}</h3>
               <p>{s.text}</p>
             </article>
           ))}
         </div>
       </div>
 
-      {/* Kompetenser: tre grupper bredvid varandra */}
+      {/* Kompetenser: fyra kort, som Mina styrkor */}
       <div className="om-mig-del">
-        <h3>
-          <Ikon namn="toolbox-outline" storlek={24} />
-          Kompetenser
-        </h3>
+        <h2>Kompetenser</h2>
         <div className="kompetens-grupper">
           {kompetenser.map((grupp) => (
-            <div key={grupp.rubrik}>
-              <h4 className="kompetens-rubrik">{grupp.rubrik}</h4>
-              <ul className="piller">
-                {grupp.lista.map(([namn, ikon]) => (
-                  <li key={namn}>
-                    <Ikon namn={ikon} />
-                    {namn}
-                  </li>
+            <div className="kompetens-kort" key={grupp.rubrik}>
+              <h3>{grupp.rubrik}</h3>
+              <ul className="kompetens-lista">
+                {grupp.lista.map(([namn]) => (
+                  <li key={namn}>{namn}</li>
                 ))}
               </ul>
             </div>

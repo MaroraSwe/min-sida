@@ -66,22 +66,16 @@
   outline: 2px solid var(--cta);
 }
 
-/* Hover: bara färgen ändras, plus EN linje under länken.
-   (Förut kom text-decoration: underline OCH border-bottom på den aktiva sidan = två linjer.) */
+/* Hover: bara färgen ändras till rosé – ingen linje under länken */
 .logo:hover,
 .lankar a:hover {
   color: var(--cta);
 }
 
-.lankar a:hover {
-  border-bottom-color: currentColor;  /* samma linje som den aktiva sidan har, men i rosé */
-}
-
 
 /* Länken till sidan man står på (NavLink ger den klassen "active") */
 .lankar a.active {
-  font-weight: 700;
-  border-bottom-color: currentColor;  /* den aktiva sidan har alltid sin linje */
+  font-weight: 700;                   /* sidan man står på syns genom fet text – ingen linje */
 }
 
 

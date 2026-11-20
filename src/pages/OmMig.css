@@ -17,7 +17,7 @@
 }
 
 .om-mig-topp h2 {
-  margin: 0 0 16px;
+  margin: 0 0 24px;                    /* lite mer luft mellan "Om mig" och texten (var 16px) */
   font-size: clamp(26px, 4vw, 32px);      /* sidrubrik: samma storlek på alla sidor */
   font-weight: 700;
   line-height: 1.15;

@@ -5,16 +5,17 @@ import Ikon from "../components/Ikon";
 import Intressen from "../components/Intressen";
 
 // Mina styrkor: en kort mening som visar VARFÖR – inte bara ett ord.
+// Skriv bara sådant som är sant och som du kan berätta mer om på en intervju.
 const styrkor = [
   {
     titel: "Samordnare",
     ikon: "calendar-check-outline",
-    text: "Projektkoordinering och verksamhetsstöd inom IT, på IKEA IT och Quest Global.",
+    text: "Projektkoordinering, affärsstöd, verksamhetsstöd och kundframgång inom IT och finans.",
   },
   {
-    titel: "Från finans till IT",
+    titel: "Det bästa av två världar",
     ikon: "swap-horizontal",
-    text: "Jag började inom finansiella tjänster i New Delhi och arbetar nu med IT i Sverige.",
+    text: "Jag har erfarenhet av både finans och IT, och tar med mig det bästa från båda.",
   },
   {
     titel: "Lagspelare",
